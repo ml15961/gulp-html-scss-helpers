@@ -1,0 +1,16 @@
+.btn {
+    @include borderRadius (3px);
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 15px;
+    position: relative;
+    
+    &::before, &::after {
+        content: '';
+    }
+    
+    &:hover {
+        color: $white;
+    }
+}

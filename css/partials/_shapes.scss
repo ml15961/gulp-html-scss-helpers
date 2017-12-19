@@ -1,0 +1,173 @@
+/* === BEGIN SHAPES CSS === */
+.lma-shapes {
+    font-size: 10em; /* This controls the size. */
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    &.heart {
+        width: 0.6em;
+        height: 0.5em;
+
+        &:before, &:after {
+            background: $orange;
+            content: '';
+            width: 0.3em;
+            height: 0.5em;
+            position: absolute;
+            top: 0;
+            left: 0.3em;
+
+            @include borderRadius (48% 48% 0 0);
+            @include transformRotate (-45deg);
+            @include transformOrigin (0 100%);
+        }
+
+        &:after {
+            left: 0;
+            @include transformRotate (45deg);
+            @include transformOrigin (100% 100%);
+        }
+    }
+
+    &.star-five {
+        @include transformRotate (35deg);
+        border-style: solid;
+        border-width: 0 0.45em 0.3em;
+        border-color: transparent transparent $gold;
+        margin: 0.5em 0;
+        width: 0;
+        height: 0;
+
+        &:before, &:after {
+            border-style: solid;
+            border-width: 0 0.12em 0.3em;
+            border-color: transparent transparent $gold;
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+
+            top: -0.2em;
+            left: -0.28em;
+            @include transformRotate (-35deg);
+        }
+
+        &:after {
+            border-style: solid;
+            border-width: 0 0.45em 0.3em;
+            border-color: transparent transparent $gold;
+            top: 0.03em;
+            left: -0.48em;
+            @include transformRotate (-70deg);
+        }
+    }
+
+    &.infinity {
+        width: 1em;
+        height: 0.5em;
+
+        &:before, &:after {
+            border: 0.11em solid;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.27em;
+            height: 0.27em;
+        }
+        
+        &::before {
+            @include borderRadius (50% 50% 5px 50%);
+            @include transformRotate (-45deg);
+            border-color: $greenLight;
+        }
+
+        &:after {
+            @include borderRadius (50% 50% 50% 5px);
+            @include transformRotate (45deg);
+            border-color: $green;
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &.triangles {
+        width: 0;
+        height: 0;
+    }
+    &.triangle-up {
+        @extend .triangles;
+        border-left: 0.25em solid transparent;
+        border-right: 0.25em solid transparent;
+        border-bottom: 0.5em solid $blue;
+    }
+    &.triangle-down {
+        @extend .triangles;
+        border-left: 0.25em solid transparent;
+        border-right: 0.25em solid transparent;
+        border-top: 0.5em solid $blueLight;
+    }
+    &.triangle-right {
+        @extend .triangles;
+        border-top: 0.25em solid transparent;
+        border-left: 0.5em solid $blueSea;
+        border-bottom: 0.25em solid transparent;
+    }
+    &.triangle-left {
+        @extend .triangles;
+        border-top: 0.25em solid transparent;
+        border-right: 0.5em solid $blueSea / 1.5;
+        border-bottom: 0.25em solid transparent;
+    }
+
+    &.yin-yang {
+        @include bgGradient(top, $white 50%, $purple 51%);
+        @include borderRadius (100%);
+        width: 0.5em;
+        height: 0.5em;
+        border: 2px solid  $purple;
+
+        &::before, &::after {
+            @include borderRadius (100%);
+            content: '';
+            position: absolute;
+            top: 25%;
+            width: 0.06em;
+            height: 0.06em;
+        }
+
+        &::before {
+            left: 0;
+            background: $white;
+            border: 0.09em solid $purple;
+        }
+
+        &::after {
+            right: 0;
+            background: $purple;
+            border: 0.09em solid $white;
+        }
+    }
+
+    &.magnifying-glass {
+        width: 0.4em;
+        height: 0.4em;
+        border: 0.05em solid $mediumvioletred;
+        border-radius: 0.35em;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            right: -0.25em;
+            bottom: -0.11em;
+            border-width: 0;
+            background: $mediumvioletred;
+            width: 0.35em;
+            height: 0.06em;
+            @include transformRotate (45deg);
+        }
+    }
+}
+/* === END SHAPES CSS === */

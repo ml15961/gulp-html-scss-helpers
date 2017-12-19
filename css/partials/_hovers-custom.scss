@@ -1,0 +1,230 @@
+/* === BEGIN HOVERS CUSTOM === */
+.lma-custom-title {
+    @include flexbox;
+    @include flexFlow(row wrap);
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    
+    background: url('../img/hovers/10.jpg') center 0 repeat;
+    background-size: 50%;
+    padding: 15px;
+    text-align: center;
+    
+    span {
+        color: $white;
+        font-size: 45px;
+        line-height: 1.2;
+        text-shadow: 0 0 5px rgba($black,0.99);
+        padding: 7px;
+    }
+    
+    .line {
+        background: $white;
+        box-shadow: 0 0 5px rgba($black,0.99);
+        flex-grow: 95;
+        height: 1px;
+        padding: 0;
+    }
+}
+.lma_img.corners {
+    -webkit-align-items: stretch !important;
+    align-items: stretch !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lma-eff-corners {
+    max-width: 480px;
+    min-width: 240px;
+    min-height: 160px;
+    margin: 7px;
+    position: relative;
+    
+    img {
+        display: block;
+    }
+    
+    .corner {
+        overflow: hidden;
+        $wh: rem(160);
+        width: $wh;
+        height: $wh;
+        position: absolute;
+        
+        &::before, &::after {
+            @include transition-duration (0.35s);
+            content: '';
+            position: absolute;
+        }
+        
+        &::before {
+            $p: 0;
+            height: $p;
+            width: $p;
+            z-index: 3;
+        }
+        
+        &::after {
+            $wh: 200%;
+            width: $wh;
+            height: $wh;
+            z-index: 1;
+        }
+    }
+        
+    &:hover, &:focus, &:active {
+        .corner::before {
+            width: rem(160);
+            height: rem(160);
+        }
+    }
+    
+    figcaption {
+        color: $white;
+        text-align: center;
+        padding: 5rem;
+        position: relative;
+        z-index: 2;
+    }
+    
+    &.corn-top-left {
+        background: $mediumvioletred;
+        
+        .corner {
+            $p: 0;
+            top: $p;
+            left: $p;
+            
+            &::before {
+                background: linear-gradient(135deg, transparent 45%, rgba($black, 0.21) 50%, rgba($green / 1.25, 1) 51%, rgba($green * 1.25, 1) 80%);
+                box-shadow: 1px 1px 1px rgba($black, 0.25);
+                $p: -2px;
+                top: $p;
+                left: $p;
+            }
+            
+            &::after {
+                @include transformRotate (135deg);
+                background: $mediumvioletred;
+                $p: rem(-47);
+                top: $p;
+                left: $p;
+            }
+        }
+            
+        &:hover, &:focus, &:active {
+            .corner::after {
+                $p: rem(33);
+                top: $p;
+                left: $p;
+            }
+        }
+    }
+    
+    &.corn-top-right {
+        background: $hotpink;
+        
+        .corner {
+            $p: 0;
+            top: $p;
+            right: $p;
+            
+            &::before {
+                background: linear-gradient(-135deg, transparent 45%, rgba($black, 0.21) 50%, rgba($blueSea / 1.25, 1) 51%, rgba($blueSea * 1.25, 1) 80%);
+                box-shadow: -1px 1px 1px rgba($black, 0.25);
+                $p: -2px;
+                top: $p;
+                right: $p;
+            }
+            
+            &::after {
+                @include transformRotate (-135deg);
+                background: $hotpink;
+                $p: rem(-47);
+                top: $p;
+                right: $p;
+            }
+        }
+        
+        &:hover, &:focus, &:active {
+            .corner::after {
+                $p: rem(33);
+                top: $p;
+                right: $p;
+            }
+        }
+    }
+    
+    &.corn-bottom-left {
+        background: $greenLight;
+        
+        .corner {
+            $p: 0;
+            bottom: $p;
+            left: $p;
+            
+            &::before {
+                background: linear-gradient(45deg, transparent 45%, rgba($black, 0.21) 50%, rgba($blue / 1.25, 1) 51%, rgba($blue * 1.25, 1) 80%);
+                box-shadow: 1px -1px 1px rgba($black, 0.25);
+                $p: -2px;
+                bottom: $p;
+                left: $p;
+            }
+            
+            &::after {
+                @include transformRotate (45deg);
+                background: $greenLight;
+                $p: rem(-47);
+                bottom: $p;
+                left: $p;
+            }
+        }
+        
+        &:hover, &:focus, &:active {
+            .corner::after {
+                $p: rem(33);
+                left: $p;
+                bottom: $p;
+            }
+        }
+    }
+    
+    &.corn-bottom-right {
+        background: ($blue2 * 1.1) + ($gray / 1.1);
+        
+        figcaption {color: $green + $grayDark;}
+        
+        .corner {
+            $p: 0;
+            right: $p;
+            bottom: $p;
+            
+            &::before {
+                background: linear-gradient(-45deg, transparent 45%, rgba($black, 0.21) 50%, rgba($gray / 1.25, 1) 51%, rgba($gray * 1.25, 1) 80%);
+                box-shadow: -1px -1px 1px rgba($black, 0.25);
+                $p: -2px;
+                bottom: $p;
+                right: $p;
+            }
+            
+            &::after {
+                @include transformRotate (-45deg);
+                background: ($blue2 * 1.1) + ($gray / 1.1);
+                $p: rem(-47);
+                bottom: $p;
+                right: $p;
+            }
+        }
+        
+        &:hover, &:focus, &:active {
+            .corner::after {
+                $p: rem(33);
+                right: $p;
+                bottom: $p;
+            }
+        }
+    }
+}
+/* === END HOVERS CUSTOM === */

@@ -1,0 +1,331 @@
+/* === BEGIN RADIO CHECKBOX INPUTs === */
+[type="radio"],
+[type="checkbox"] {display:none;}
+[type="radio"] + label, 
+[type="checkbox"] + label {
+    cursor: pointer;
+    margin-left: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+[type="radio"] + label::before,
+[type="radio"] + label::after,
+[type="checkbox"] + label::before,
+[type="checkbox"] + label::after {
+    @include transition (all 0.35s ease-in-out);
+    border: 2px solid $purple;
+    content: '';
+    display: inline-block;
+    $wh: 20px;
+    height: $wh;
+    width: $wh;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+[type="radio"] + label::before, [type="radio"] + label::after {@include borderRadius (50%);}
+[type="radio"]:checked + label::before {
+    background: $purple;
+    border: none;
+    $wh: 10px;
+    height: $wh;
+    width: $wh;
+    left: 7px;
+    top: 7px;
+}
+[type="checkbox"] + label::before {
+    @include translateX (50%);
+    border: none;
+    font-size: 5px;
+}
+[type="checkbox"]:checked + label::before {
+    @include translateX (-50%);
+    border: none;
+    color: $purple;
+    font-size: 30px;
+    content: '+';
+    left: 14px;
+    top: -1px;
+}
+[type="radio"]:disabled + label::before, 
+[type="radio"]:disabled + label::after, 
+[type="radio"]:checked:disabled + label::before,
+[type="checkbox"]:disabled + label::before, 
+[type="checkbox"]:disabled + label::after, 
+[type="checkbox"]:checked:disabled + label::before {opacity: 0.2;}
+/* === END RADIO CHECKBOX INPUTs === */
+
+/* === BEGIN INPUTs === */
+::-webkit-input-placeholder {color: rgba($purple, 0.3);}
+::-moz-placeholder {color: rgba($purple, 0.3);}/* Firefox 19+ */
+:-moz-placeholder {color: rgba($purple, 0.3);}/* Firefox 18- */
+:-ms-input-placeholder {color: rgba($purple, 0.3);}
+
+input, textarea, button, select {
+    @include borderRadius (0);
+	background: $white;
+    border: 1px solid $purple;
+	color: $purple;
+    font: {
+        family: 'Certege', 'Arial', sans-serif;
+        size: 17px;
+    }
+    line-height: 19px;
+    padding: 5px 15px;
+    
+    display: inline-block;
+}
+select {
+    min-width: 150px;
+    max-width: 160px;
+    
+    option {
+        background: none;
+        border: 0px none;
+        width: 100%;
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+}
+[type="date"] {
+    min-width: 140px;
+    max-width: 150px;
+}
+[type="submit"], [type="reset"] {
+    @include appearance (none);
+    @include borderRadius (0);
+}
+[type="submit"], [type="reset"], button {
+	background: $purple;
+	border: 1px solid $purple / 1.2;
+	color: $white;
+    padding: 4px 10px;
+    
+    &:hover {
+        background: $purple * 1.2;
+        cursor: pointer;
+    }
+}
+button {display: inline-block;}
+
+/*::-webkit-datetime-edit { }
+::-webkit-datetime-edit-fields-wrapper { }
+::-webkit-datetime-edit-text { }
+::-webkit-datetime-edit-month-field { }
+::-webkit-datetime-edit-day-field { }
+::-webkit-datetime-edit-year-field { }
+::-webkit-inner-spin-button { }
+::-webkit-calendar-picker-indicator { }*/
+
+
+.material {
+    span {
+        @include transition (all 0.35s ease-in-out);
+        border-bottom: 1px solid $purple;
+        display: inline-block;
+        margin-bottom: 10px;
+        position: relative;
+        vertical-align: top;
+        
+        [type="text"], [type="tel"], [type="email"], [type="password"], [type="search"], [type="date"], [type="file"], textarea, select {
+            background: none;
+            border: none;
+            padding: 2px 5px;
+            position: relative;
+            
+            & + span {
+                @include translateX (-50%);
+                background: $deeppink;
+                border-bottom: none;
+                height: 3px;
+                margin-bottom: 0;
+                position: absolute;
+                left: 50%;
+                width: 0;
+                bottom: -2px;
+            }
+            
+            &:focus {
+                @include transition (0.5s);
+                color: $deeppink;
+            }
+
+            &:focus + span {
+                @include translateX (0);
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+    
+    /*.animate {
+        position: relative;
+        background: violet;
+        
+        i {
+            background: #f90;
+            color: #fff;
+            text-align: center;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            
+            &::before {
+                content: 's';
+                
+            }
+        }
+        
+        [type="search"] {
+            width: 10px;
+            
+            &:focus {
+                width: 300px;
+            }
+        }
+        
+        [type="search"]:focus + i {
+            background: darkred;
+        }
+        
+    }*/
+    
+    .select {
+        min-width: 150px;
+        max-width: 160px;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+        
+        &::after {
+            border-width: 15px 5px 0 5px;
+            border-style: solid;
+            border-color: rgba($deeppink, 0.7) transparent;
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 7px;
+            right: 0;
+            z-index: -1;
+        }
+        
+        select {
+            @include appearance (none);
+            background: none;
+            border: 0px none;
+            cursor: pointer;
+            margin-bottom: -2px;
+            padding: 2px 5px;
+            width: 100%;
+            &::-ms-expand {display: none;}
+        }
+    }
+    .switcher {
+        @include borderRadius (25px);
+        background: rgba($mediumvioletred, 0.2);
+        border-bottom: none;
+        position: relative;
+        width: 50px;
+        height: 25px;
+        margin: 0 30px;
+        
+        .off, .on {
+            border-bottom: none;
+            display: block;
+            position: absolute;
+            color: rgba($purple / 1.3, 0.7);
+        }
+        .off {
+            right: 107%;
+        }
+        .on {
+            left: 107%;
+        }
+        
+        [type="checkbox"] {
+            & + label {
+                @include borderRadius (25px);
+                cursor: pointer;
+                margin-left: 0;
+                padding-left: 0;
+                position: absolute;
+                $wh: 0;
+                top: $wh;
+                right: $wh;
+                bottom: $wh;
+                left: $wh;
+                transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+
+                 &::before, &::after {
+                    border: 0 none;
+                }
+
+                &::before {
+                    @include borderRadius (50%);
+                    background: rgba($purple / 1.3, 0.2);
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    $wh: 25px;
+                    height: $wh;
+                    width: $wh;
+                    left: -13px;
+                }
+            }
+            
+            &:checked {
+                & + label {
+                    @include borderRadius (25px);
+                    background: rgba($purple, 0.7);
+                }
+                
+                & + label::before {
+                    background: rgba($purple / 1.3, 1);
+                    left: 37px;
+                    right: -13px;
+                }
+            }
+        }
+    }
+    
+    .custom-file-upload-hidden {
+        display: none;
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+    }
+    .custom-file-upload {
+        display: block;
+        width: auto;
+        font-size: 16px;
+        margin-top: 30px;
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+    .file-upload-wrapper {
+        position: relative; 
+        margin-bottom: 5px;
+    }
+    .file-upload-input {
+        $file-upload-size: 200px;
+        @include transition(all 0.2s ease-in);
+        width: $file-upload-size;
+        font-size: 16px;
+        padding: 11px 17px;
+    }
+    .file-upload-button {
+        @include transition(all 0.2s ease-in);
+        cursor: pointer; 
+        display: inline-block;
+        font-size: 16px;
+        padding: 11px 20px;
+    }
+}
+/* === END INPUTs === */

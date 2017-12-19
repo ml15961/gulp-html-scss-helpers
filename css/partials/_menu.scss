@@ -1,0 +1,109 @@
+/* === BEGIN MENU === */
+.btn-navbar {
+    display: none;
+    
+    .icon-bar {
+        @include transition (background 0.3s);
+        @include borderRadius (1px);
+        background-color: $white;
+        box-shadow: 0 0 2px rgba($black, 0.4);
+        display: block;
+        width: 25px;
+        height: 2px;
+        margin-bottom: 4px;
+    }
+    
+    &:hover .icon-bar, &.active .icon-bar {
+        background-color: $hotpink;
+    }
+    
+    &.active {
+        @include transition-delay (0.2s);
+        position: fixed;
+        $p: 16px;
+        top: $p;
+        left: $p;
+        z-index: 9999;
+    }
+}
+
+.menu {
+    display: none;
+    position: relative;
+    z-index: 10;
+    
+    li {
+        display: inline-block;
+        position: relative;
+        
+        a {
+            @include transition (background 0.3s);
+            background: rgba($purple * 1.2, 0.7);
+            color: $white;
+            display: block;
+            padding: 5px 10px;
+            
+            &:hover {
+                background: rgba($mediumvioletred / 1.7, 1);
+            }
+        }
+        
+        ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            
+            li {
+                display: block;
+            }
+        }
+        
+        &:hover {
+            & > a {
+                background: rgba($mediumvioletred, 0.7);
+            }
+            
+            ul {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        min-height: 60px;
+    }
+    .btn-navbar {
+        display: inline-block;
+    }
+    .menu {
+        background: rgba($black, 0.7);
+        padding: 55px 15px 15px;
+        width: 50%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9998;
+        
+        li {
+            display: block;
+            margin-bottom: 2px;
+            
+            ul {
+                border-left: 2px solid transparent;
+                top: 0;
+                left: 100%;
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .menu {
+        display: block !important;
+    }
+}
+/* === END MENU === */

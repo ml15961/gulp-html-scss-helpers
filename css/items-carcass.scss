@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+@import "partials/colors";
+@import "partials/mixins";
+@import "partials/reset";
+@import "partials/flex-grid";
+
+header, footer, .content, aside {padding: 15px;}
+
+html, body {
+    position: relative;
+    min-height: 100%;
+}
+html {
+    background: $hotpink;
+}
+body {
+    @include flexbox;
+    @include flexFlow(column nowrap);
+    background: $f1;
+    min-height: 100vh;
+}
+
+@media screen and (max-height: 768px) and (max-width: 991px) {
+    html, body {
+        height: auto;
+    }
+}
+
+/* --- BEGIN footer-bottom --- */
+.footer-bottom {
+    & {
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+
+        position: relative;
+    }
+    header, footer {
+        background: $greenLight;
+    }
+    .wrap_page {
+        @include flexbox;
+        @include flexFlow(column nowrap);
+        background: rgba($gold, 0.15);
+    }
+    
+    .content {
+        align-self: flex-start;
+    }
+}
+/* --- END footer-bottom --- */
+
+/* --- BEGIN carcass-footer-bottom-aside-full-height --- */
+.footer-bottom-aside-full-height {
+    & {
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+    header, footer {
+        background: $greenLight;
+    }
+    header {
+        width: 100%;
+    }
+    .wrap_full_h {
+        @include flexbox;
+        @include flexFlow(row wrap);
+        
+        -webkit-flex-grow: 100;
+        flex-grow: 100;
+    }
+    aside {
+        background: rgba($greenLight, 0.35);
+        width: 25%;
+    }
+    .content {
+        width: 75%;
+    }
+}
+/* --- END carcass-footer-bottom-aside-full-height --- */
+
+/* --- BEGIN carcass-romb --- */
+.romb {
+    @include bgGradient(200deg, $purple * 1.3 50%, $purple 50%);
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    
+    .wrap_romb {
+        @include flexbox;
+        @include flexFlow(row wrap);
+        
+        @include matrix (1, 0, 1, 0, 0, 0);
+        @include transformRotate (45deg);
+        $wh: rem(600);
+        width: $wh;
+        height: $wh;
+        
+        .wrap_romb_inner {
+            @include flexbox;
+            @include flexFlow(row wrap);
+            box-shadow: 0 0 5px 0 rgba($black, 0.5);
+            $wh: 100%;
+            width: $wh;
+            height: $wh;
+            padding: 1px;
+        
+            li {
+                border: 1px solid $white;
+                $wh: 33.333%;
+                width: $wh;
+                height: $wh;
+                overflow: hidden;
+                text-align: center;
+                position: relative;
+                
+                img {
+                    @include transformScale-rotate (2.1, -45deg);
+                    $wh: 100%;
+                    width: $wh;
+                }
+                
+                &.scale-logo {
+                    @include bgGradient(155deg, $purple * 1.3 25%, $purple 75%);
+                    @include flexbox;
+                    @include flexFlow(row wrap);
+                    -webkit-align-items: center;
+                    align-items: center;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    
+                    img {
+                        @include transformScale-rotate (0.5, -45deg);
+                    }
+                }
+
+                & > div {
+                    @include transformRotate (-45deg);
+                    @include transition-duration (0.35s);
+                    background: rgba($white, 0.45);
+                    padding: 5px;
+                    $wh: 100%;
+                    width: $wh;
+                    height: $wh;
+                    position: absolute;
+                    $p: 0;
+                    top: 120%;
+                    right: $p;
+                    left: 50%;
+                }
+                    
+                &:hover > div {
+                    top: 50%;
+                }
+            }
+        }
+    }
+}
+/* --- END carcass-romb --- */
+
+/* --- BEGIN partial-1 --- */
+.partial-1 {
+    .container {
+        width: 100%;
+    }
+    
+    .clearfix {
+        display: table;
+        width: 100%;
+    }
+}
+/* --- END partial-1 --- */

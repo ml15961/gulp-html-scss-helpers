@@ -1,0 +1,91 @@
+/* === BEGIN RESPONSIVE TABLE === */
+.responsive-table {
+    margin-bottom: 30px;
+    width: 100%;
+    
+    th {
+        background: $hotpink * 1.2;
+    }
+    
+    th, td {
+        border: 1px solid $mediumvioletred;
+        padding: 7px;
+    }
+    
+    tr:nth-child(2n-1) {
+        background: $hotpink * 2.1;
+    }
+}
+
+.div-ul-li-table {
+    @include transition (all 0.35s ease-in-out);
+    
+    @include flexbox;
+    @include flexFlow(row wrap);
+    
+    margin-bottom: 30px;
+    width: 100%;
+    
+    ul {
+        width: -webkit-calc(100% / 3);
+        width: calc(100% / 3);
+        
+        &:nth-child(2n-1) {
+            background: $hotpink * 2.1;
+        }
+        
+        li {
+            border-bottom: 1px solid $mediumvioletred;
+            padding: 7px;
+            
+            &.title {
+                background: $hotpink * 1.2;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .responsive-table {
+        thead {
+            display: none;
+        }
+        tr {
+            margin-bottom: 20px;
+        }
+        tr, th, td {
+            display: block;
+        }
+        td {
+            border-top: none;
+            text-align: right;
+            
+            &[data-title]:before {
+                content: attr(data-title);
+                text-align: left;
+                float: left;
+                font-size: .8rem;
+                color: rgba(94, 93, 82, 0.75);
+            }
+            &[data-type=currency] {
+                color: darkred;
+                text-align: center;
+            }
+        }
+        th {
+            color: $purple;
+        }
+    }
+    
+    .div-ul-li-table {
+        ul {
+            margin-bottom: 20px;
+            width: 100%;
+            
+            .title {
+                color: $purple;
+            }
+        }
+    }
+}
+/* === END RESPONSIVE TABLE === */

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Alexander';
+    src: local('Alexander'),
+         url('../fonts/alexander.woff2') format('woff2'), 
+         url('../fonts/alexander.woff') format('woff'), 
+         url('../fonts/alexander.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Certege';
+    src: local('Certege'), 
+         url('../fonts/certege.woff2') format('woff2'), 
+         url('../fonts/certege.woff') format('woff'), 
+         url('../fonts/certege.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

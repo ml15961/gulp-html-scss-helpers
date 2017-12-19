@@ -1,0 +1,90 @@
+/* === BEGIN TABs === */
+.tabs {
+    @include flexbox;
+    @include flexFlow(row wrap);
+//    background: rgba($orange, 0.07);
+    margin-bottom: 30px;
+    position: relative;
+    
+    input {
+        display: none;
+    }
+    
+    label {
+        @include transition (all 0.7s ease 0s);
+        @include bgGradient(left, rgba($black, 0.05%) 50%, rgba($green, 0.9%) 50%);
+        background-size: 270% 100%;
+        color: $orangered;
+        cursor: pointer;
+        margin-left: 0;
+        padding: 7px 11px;
+
+        &::before, &::after {
+            display: none;
+        }
+        
+        &:hover {
+            background-position: -60% 0;
+            color: $white;
+        }
+    }
+
+    [type="radio"]:checked + label {
+        background: rgba($greenLight, 0.9);
+        color: $white;
+    }
+    
+    .tabs_cont {
+        background: $white;
+        border: 1px solid rgba($greenLight, 0.9);
+        position: relative;
+        width: 100%;
+        min-height: 230px;
+    }
+    
+    [id^="tab_c"] {
+        @include transition (opacity .5s ease-in-out);
+        @include transition (all .7s ease-in-out);
+        @include translateX (-100%);
+        background: $white;
+        color: $greenLight;
+        padding: 10px 21px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+    
+    #tab_1:checked ~ .tabs_cont #tab_c1,
+    #tab_2:checked ~ .tabs_cont #tab_c2,
+    #tab_3:checked ~ .tabs_cont #tab_c3,
+    
+    #tab_4:checked ~ .tabs_cont #tab_c4,
+    #tab_5:checked ~ .tabs_cont #tab_c5,
+    #tab_6:checked ~ .tabs_cont #tab_c6{
+        @include translateX (0%);
+        position: static;
+        left: 0;
+        opacity: 1;
+    }
+    
+    &.hor {
+        @include flexFlow(column wrap);
+        height: 230px;
+        
+        label {
+            width: 25%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tabs_cont {
+            width: 75%;
+            /*position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;*/
+        }
+    }
+}
+/* === END TABs === */

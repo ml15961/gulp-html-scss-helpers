@@ -1,0 +1,81 @@
+/* === BEGIN RESET === */
+img { border: none;}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote,
+a, address, img, q, strong, sub, sup, b, u, i,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, details, figcaption, figure, 
+footer, header, nav, section, time, audio, video {
+    @include box-sizing(border-box);
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, nav, section {
+	display: block;
+}
+body {line-height:1;}
+li {list-style:none;}
+blockquote,q {quotes:none;}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+:focus {outline: none;}
+* {outline: none;}
+
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th {text-align: left;}
+textarea {
+	resize:none;
+	margin:0;
+	padding:0;
+}
+b {font-weight: 700;}
+a {
+//    color: $gray;
+	text-decoration: none;
+}
+
+::-webkit-input-placeholder {opacity: 1;}
+::-moz-placeholder {opacity: 1;}/* Firefox 19+ */
+:-moz-placeholder {opacity: 1;}/* Firefox 18- */
+:-ms-input-placeholder {opacity: 1;}
+
+* { -webkit-tap-highlight-color:transparent; } /* iOS: вроде бы должно убирать блик с кнопок */
+
+[type="search"], [type="search"]::-webkit-search-cancel-button {
+    @include appearance (none);
+}
+
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-results-button,
+[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+[type=date]::-webkit-inner-spin-button {
+    @include appearance (none);
+    display: none;
+}
+
+[type=date]::-webkit-calendar-picker-indicator {
+    @include appearance (none);
+    display: none;
+}
+/* === END RESET === */

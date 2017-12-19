@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom elements</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body>
+    //= template/header.html
+	
+	<div class="globalWrapper">
+        <form class="wrapper" action="/" method="post">
+            <h3>Поля ввода</h3>
+            
+            <p>
+                <input type="text" name="" value="" placeholder="name" pattern="[A-Za-zА-Яа-яЁё]{3,50}" />
+                <input type="tel" name="" value="" placeholder="tel" pattern="" />
+                <input type="password" name="" value="" placeholder="password" pattern="" />
+                <input type="email" name="" value="" placeholder="email" required />
+                <input type="search" placeholder="search" />
+                <input type="date" placeholder="dd.mm.year" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" />
+                
+                <hr />
+                
+                <input type="number" placeholder="0" />
+                <select>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">Далеко-далеко за словесными горами в стране.</option>
+                    <option value="">7</option>
+                </select>
+                <input type="reset" value="Сбросить" />
+                <input type="submit" value="Отправить" />
+                <button>Send</button>
+                
+                <hr />
+                
+                <textarea id="text1" placeholder="Набирайте текст сообщения здесь :)"></textarea><span id="chars1"></span>
+                <textarea id="text2" placeholder="Набирайте текст сообщения здесь :)"></textarea><span id="chars2"></span>
+                
+                <hr />
+                
+                <input type="file" id="typefile" /><label for="typefile">Выбрать файл</label>
+                <input type="color" pattern="^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" />
+            </p>
+            
+            <h3>Material design</h3>
+            <p class="material">
+                <input id="btn1" type="radio" name="group1" />
+                <label for="btn1">btn 1</label>
+                <input id="btn2" type="radio" name="group1" />
+                <label for="btn2">btn 2</label>
+                <input id="btn3" type="radio" name="group1" disabled />
+                <label for="btn3">btn 3</label>
+                <input id="btn4" type="radio" name="group2" checked disabled />
+                <label for="btn4">btn 4</label>
+                
+                <br /><br />
+                
+                <input id="checkbox1" type="checkbox" checked disabled />
+                <label for="checkbox1">checkbox 1</label>
+                <input id="checkbox2" type="checkbox" />
+                <label for="checkbox2">checkbox 2</label>
+                <input id="checkbox3" type="checkbox" />
+                <label for="checkbox3">checkbox 3</label>
+                
+                <br /><br />
+                
+                <span class="switcher">
+                    <span class="off">off</span>
+                    <input id="switch" type="checkbox" name="switcher" /><label for="switch">&nbsp;</label>
+                    <span class="on">on</span>
+                </span>
+                
+                <br /><br />
+                
+                <span><input type="text" name="" value="" placeholder="name" pattern="[A-Za-zА-Яа-яЁё]{3,50}" /><span>&nbsp;</span></span>
+                <span><input type="tel" name="" value="" placeholder="tel" pattern="" /><span>&nbsp;</span></span>
+                <span><input type="password" name="" value="" placeholder="password" pattern="" /><span>&nbsp;</span></span>
+                <span><input type="email" name="" value="" placeholder="email" required /><span>&nbsp;</span></span>
+                <span><input type="search" placeholder="search" /><span>&nbsp;</span></span>
+                <span><input type="date" placeholder="dd.mm.year" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" /><span>&nbsp;</span></span>
+                
+                <span class="select">
+                    <select>
+                        <option value="">1</option>
+                        <option selected value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">Далеко-далеко за словесными горами в стране, гласных и согласных.</option>
+                        <option value="">7</option>
+                    </select><span>&nbsp;</span>
+                </span>
+                
+                <br /><br />
+                
+                <span>
+                    <textarea placeholder="Material textarea"></textarea><span>&nbsp;</span>
+                </span>
+                
+                <br /><br />
+                
+<!--                <span class="animate"><input type="search" placeholder="search" /><i>&nbsp;</i></span>-->
+                
+                <br /><br />
+                
+                <span>
+                    <input type="file" /><span>&nbsp;</span>
+                </span>
+            </p>
+            <div class="js">
+               <h3>С скриптом</h3>
+                <div class="custom-file-upload">
+                    <label for="file">File: </label> 
+                    <input type="file" id="file" name="myfiles[]" multiple />
+                </div>
+            </div>
+        </form>
+        
+        <div class="wrapper">
+            <h3>Таблица Responsive: table tr th td</h3>
+            <table class="responsive-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Ягоды</th>
+                        <th scope="col">Цвет</th>
+                        <th scope="col">Время созревания</th>
+                        <th scope="col">Сорт</th>
+                        <th scope="col">Сладость</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Смородина</th>
+                        <td data-title="Цвет">белая, красная, чёрная</td>
+                        <td data-title="Время созревания">ранняя</td>
+                        <td data-title="Сорт" data-type="currency">сорт Бордо</td>
+                        <td data-title="Сладость" data-type="currency">кислосладкая</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ежевика</th>
+                        <td data-title="Цвет">чёрная</td>
+                        <td data-title="Время созревания">ранняя</td>
+                        <td data-title="Сорт" data-type="currency">сорт Вика</td>
+                        <td data-title="Сладость" data-type="currency">сладкая</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Клубника</th>
+                        <td data-title="Цвет">белая, красная</td>
+                        <td data-title="Время созревания">поздняя</td>
+                        <td data-title="Сорт" data-type="currency">сорт Румба</td>
+                        <td data-title="Сладость" data-type="currency">кислая</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Таблица Responsive: div ul li</h3>
+            <div class="div-ul-li-table">
+                <ul>
+                    <li class="title">Продукт</li>
+                    <li>сливы</li>
+                    <li>изюм</li>
+                    <li>зелень одуванчика</li>
+                </ul>
+                <ul>
+                    <li class="title">Размер порции</li>
+                    <li>5 больших</li>
+                    <li>85 гр</li>
+                    <li>1/2 стакана</li>
+                </ul>
+                <ul>
+                    <li class="title">Кол-во железа(мг)</li>
+                    <li>2.0</li>
+                    <li>1.9</li>
+                    <li>1.6</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h3>Табы с помощью CSS3</h3>
+            <section class="tabs">
+                <input id="tab_1" type="radio" name="tab" checked="checked" />
+                <label for="tab_1">Tab One</label>
+
+                <input id="tab_2" type="radio" name="tab" />
+                <label for="tab_2">Tab Two</label>
+
+                <input id="tab_3" type="radio" name="tab" />
+                <label for="tab_3">Tab Three</label>
+
+                <div class="tabs_cont">
+                    <div id="tab_c1">
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Даже все послушавшись рекламных дорогу агенство, приставка, снова, вопроса строчка гор коварный дороге своих своих наш лучше взгляд. Правилами меня, то проектах алфавит все пустился запятых свой рот? Деревни мир приставка, повстречался необходимыми домах великий, всеми безорфографичный ручеек вскоре скатился назад коварных, курсивных дороге грустный города образ бросил! Повстречался толку необходимыми гор пустился что диких всеми жизни безопасную курсивных океана!
+                    </div>
+                    <div id="tab_c2">
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. На берегу все безопасную, лучше скатился образ выйти вопрос жаренные возвращайся текст текста инициал коварных своего. Большого он рот там заголовок рыбными злых над одна первую предложения все прямо то всеми толку, осталось если его заглавных повстречался возвращайся что рекламных меня наш. Последний буквенных, коварных всеми!
+                    </div>
+                    <div id="tab_c3">
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Всеми вопроса обеспечивает но сбить правилами рот, страну маленькая.
+                    </div>
+                </div>
+            </section>
+            
+            <section class="tabs hor">
+<!--                <div class="wr_btn">-->
+                    <input id="tab_4" type="radio" name="tab2" checked="checked" />
+                    <label for="tab_4">Tab One</label>
+
+                    <input id="tab_5" type="radio" name="tab2" />
+                    <label for="tab_5">Tab Two</label>
+
+                    <input id="tab_6" type="radio" name="tab2" />
+                    <label for="tab_6">Tab Three</label>
+<!--                </div>-->
+
+                <div class="tabs_cont">
+                    <div id="tab_c4">
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Даже все послушавшись рекламных дорогу агенство, приставка, снова, вопроса строчка гор коварный дороге своих своих наш лучше взгляд. Правилами меня, то проектах алфавит все пустился запятых свой рот? Деревни мир приставка, повстречался необходимыми домах великий, всеми безорфографичный ручеек вскоре скатился назад коварных, курсивных дороге грустный города образ бросил! Повстречался толку необходимыми гор пустился что диких всеми жизни безопасную курсивных океана!
+                    </div>
+                    <div id="tab_c5">
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. На берегу все безопасную, лучше скатился образ выйти вопрос жаренные возвращайся текст текста инициал коварных своего. Большого он рот там заголовок рыбными злых над одна первую предложения все прямо то всеми толку, осталось если его заглавных повстречался возвращайся что рекламных меня наш. Последний буквенных, коварных всеми!
+                    </div>
+                    <div id="tab_c6">
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Всеми вопроса обеспечивает но сбить правилами рот, страну маленькая.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="wrapper">
+            <div class="product_description">
+                <h3>Разворачивающийся-сворачиваюшийся блок с помощью checkbox и css3</h3>
+                <!--<input id="product_description" type="checkbox" />
+                <label class="read-all" for="product_description">&nbsp;</label>-->
+                <div class="toggle">
+                    <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Своих пояс запятой использовало над власти на берегу. Большого о однажды сих она от всех, дал, жизни путь использовало оксмокс послушавшись пояс ты. Все необходимыми парадигматическая решила, одна переписывается великий своего последний, курсивных большой буквоград заманивший. Точках своих пунктуация океана своего взобравшись предложения жизни свой грустный вершину рукописи запятой прямо, гор не одна над жаренные своего, агенство города переписывается первую парадигматическая! Пустился щеке ручеек, снова текстами, она большой инициал свою коварных. Несколько обеспечивает предупредила ведущими знаках, текст буквенных свое снова. Ведущими которой города обеспечивает бросил по всей, подзаголовок пояс прямо языком повстречался собрал!</p>
+                    <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей переписывается, инициал грамматики толку, необходимыми напоивший он. Буквоград бросил заглавных знаках ты он домах. Текстами по всей подпоясал ему, пор знаках семь переписывается дал грамматики приставка решила на берегу грустный буквоград, власти себя lorem образ снова! Лучше пунктуация о вопрос, пояс рыбного, языкового гор агенство эта страна свой составитель скатился алфавит, вершину инициал всемогущая выйти заглавных, правилами собрал вскоре строчка. Даль оксмокс, предупреждал скатился инициал безопасную там власти составитель, она от всех. Продолжил, буквенных. Оксмокс реторический использовало толку осталось маленький, послушавшись страна что речью своих которое переписали свой рот деревни продолжил. Своих его он, не ведущими заголовок букв безорфографичный семантика, грамматики пор предупреждал океана языкового до ручеек приставка продолжил проектах страна заглавных правилами эта большого что. Пунктуация рот грамматики переписывается рукопись, заголовок то! Всеми но речью рыбного, своего пунктуация рыбными моей, жаренные безорфографичный, коварный вершину lorem заманивший себя строчка одна это деревни.</p>
+                </div>
+            </div>
+            
+            <p class="textOverflow">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+        </div>
+        
+        <div class="wrapper spiski">
+            <ol class="lma-list rounded">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ol>
+            
+            <ol class="lma-list rectangle">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ol>
+            
+            <ul class="lma-list border">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ul>
+            
+            <ul class="lma-list first">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ul>
+            
+            <ul class="lma-list menuBar">
+                <li>Салаты</li>
+                <li><span>"Греческий"</span><em>320</em></li>
+                <li><span>"Цезарь"</span><em>430</em></li>
+                <li><span>"Теплый салат с куриной печенью"</span><em>300</em></li>
+                <li><span>"Оливье"</span><em>350</em></li>
+                <li><span>"Морской"</span><em>450</em></li>
+            </ul>
+            
+            <ul class="lma-list dbl-border">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ul>
+            
+            <ul class="lma-list ball">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ul>
+            
+            <ul class="lma-list beads">
+                <li><a href="#">Элемент списка</a></li>
+                <li><a href="#">Элемент списка</a></li>
+                <li><a href="#">Элемент списка</a></li>
+                <li><a href="#">Элемент списка</a></li>
+                <li><a href="#">Элемент списка</a></li>
+            </ul>
+            
+            <ul class="lma-list dotted">
+                <li><span>Биг Мак</span><span class="dots">&nbsp;</span><span>99 Р</span></li>
+                <li><span>Роял Де Люкс</span><span class="dots">&nbsp;</span><span>112 Р</span></li>
+                <li><span>Картофель фри</span><span class="dots">&nbsp;</span><span>42 Р</span></li>
+                <li><span>Coca Cola 0,25</span><span class="dots">&nbsp;</span><span>48 Р</span></li>
+                <li><span>Латте</span><span class="dots">&nbsp;</span><span>92 Р</span></li>
+            </ul>
+            
+            <ol class="lma-list bullet">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ol>
+            
+            <ol class="lma-list pills">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ol>
+            
+            <ol class="lma-list square">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ol>
+            
+            <ul class="lma-list zebra">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ul>
+            
+            <ul class="lma-list push">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ul>
+            
+            <dl class="lma-list holiday">
+                <dt>1.04.15</dt>
+                <dd>День смеха</dd>
+                <dt>4.04.15</dt>
+                <dd>День веб-мастера</dd>
+                <dt>5.04.15</dt>
+                <dd>День геолога</dd>
+                <dt>7.04.15</dt>
+                <dd>День рождения РУНЕТА</dd>
+            </dl>
+            
+            <ul class="lma-list older">
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+                <li>Элемент списка</li>
+            </ul>
+        </div>
+
+        <div class="wrapper">
+           <h3>Сетка flexbox SCSS адаптив</h3>
+            <div class="grid-scss">
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+
+                <div class="span col-2">grid</div>
+                <div class="span col-2">grid</div>
+                <div class="span col-2">grid</div>
+                <div class="span col-2">grid</div>
+                <div class="span col-2">grid</div>
+                <div class="span col-2">grid</div>
+
+                <div class="span col-3">grid</div>
+                <div class="span col-3">grid</div>
+                <div class="span col-3">grid</div>
+                <div class="span col-3">grid</div>
+
+                <div class="span col-4">grid</div>
+                <div class="span col-4">grid</div>
+                <div class="span col-4">grid</div>
+
+                <div class="span col-5">grid</div>
+                <div class="span col-5">grid</div>
+                <div class="span col-2">grid</div>
+
+                <div class="span col-6">grid</div>
+                <div class="span col-6">grid</div>
+
+                <div class="span col-5">grid</div>
+                <div class="span col-7">grid</div>
+
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-8">grid</div>
+
+                <div class="span col-2">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-9">grid</div>
+
+                <div class="span col-1">grid</div>
+                <div class="span col-1">grid</div>
+                <div class="span col-10">grid</div>
+
+                <div class="span col-1">grid</div>
+                <div class="span col-11">grid</div>
+
+                <div class="span col-12">grid</div>
+
+
+                <div class="span col-12">
+                    <div class="span col-2">grid</div>
+                    <div class="span col-1">grid</div>
+                    <div class="span col-1">grid</div>
+                    <div class="span col-3">grid</div>
+                    <div class="span col-5">
+                        <div class="span col-3">grid</div>
+                        <div class="span col-3">grid</div>
+                        <div class="span col-3">grid</div>
+                        <div class="span col-3">grid</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+           <h3>Сетка flexbox адаптив (подобие Bootstrap)</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-12 col-vs-12">grid</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-3 col-vs-6">grid</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-2 col-vs-6">grid</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-3 col-vs-12">grid</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-4 col-vs-9">grid</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-3 col-vs-3">grid</div>
+                    <div class="col-lg-1 col-md-4 col-sm-4 col-xs-4 col-vs-2">grid</div>
+                    <div class="col-lg-1 col-md-4 col-sm-4 col-xs-5 col-vs-2">grid</div>
+                    <div class="col-lg-1 col-md-4 col-sm-4 col-xs-9 col-vs-2">grid</div>
+                    <div class="col-lg-1 col-md-3 col-sm-4 col-xs-3 col-vs-2">grid</div>
+                    <div class="col-lg-1 col-md-4 col-sm-4 col-xs-6 col-vs-2">grid</div>
+                    <div class="col-lg-1 col-md-5 col-sm-4 col-xs-6 col-vs-2">grid</div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-5 col-xs-12">grid</div>
+                    <div class="col-lg-2 col-md-2 col-sm-7 col-xs-12">grid</div>
+                    <div class="col-lg-2 col-md-2 col-sm-9 col-xs-12">grid</div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">grid</div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">grid</div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">grid</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-9 col-xs-8">grid</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">grid</div>
+                    <div class="col-lg-3 col-md-3 col-sm-5 col-xs-2">grid</div>
+                    <div class="col-lg-3 col-md-3 col-sm-7 col-xs-10">grid</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-7">grid</div>
+                    <div class="col-lg-4 col-md-4 col-sm-2 col-xs-5">grid</div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">grid</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-2 col-xs-4">grid</div>
+                    <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">grid</div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">grid</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-9">grid</div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">grid</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-8">grid</div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-4">grid</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-1 col-xs-4">grid</div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">grid</div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-4">grid</div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7">grid</div>
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-5">grid</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">grid</div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8">grid</div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-9">grid</div>
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-3">grid</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-9">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-5">grid</div>
+                                    <div class="col-lg-9 col-md-4 col-sm-6 col-xs-7">grid</div>
+                                    <div class="col-lg-6 col-md-4 col-sm-6 col-xs-2">grid</div>
+                                    <div class="col-lg-6 col-md-12 col-sm-7 col-xs-10">grid</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-5 col-xs-12">grid</div>
+                            <div class="col-lg-1 col-md-1 col-sm-5 col-xs-7">grid</div>
+                            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-5">grid</div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">grid</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr />
+            <h4>Justify-content center</h4>
+            <div class="container">
+                <div class="row with-justify-content-center">
+                    <div class="order1 col-lg-3 col-md-3 col-sm-3 col-xs-5 col-vs-12">
+                        111
+                    </div>
+                    <div class="order2 col-lg-4 col-md-4 col-sm-4 col-xs-7 col-vs-12">
+                        222
+                    </div>
+                </div>
+            </div>
+            
+            <hr />
+            <h4>Align-items center</h4>
+            <div class="container">
+                <div class="row with-align-items-center">
+                    <div class="item1 col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        111
+                        <p>lkdsjfkl</p>
+                        <p>lkdsjfkl</p>
+                        <p>lkdsjfkl</p>
+                        <p>lkdsjfkl</p>
+                    </div>
+                    <div class="item2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        222
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrapper">
+            <h3>Всплывающие подсказки</h3>
+            <div class="speech-bubble">
+                I like bananas, because they have no bones. 
+                <p>lalala</p>
+            </div>
+
+            <div class="speech">
+                I like bananas, because they have no bones.
+                <p>lalala</p>
+            </div>
+        </div>
+
+        <div class="css-shapes wrapper">
+            <h3>CSS3 Фигуры</h3>
+            <span class="lma-shapes heart">&nbsp;</span>
+            <span class="lma-shapes star-five">&nbsp;</span>
+            <span class="lma-shapes infinity">&nbsp;</span>
+            
+            <span class="lma-shapes triangle-up">&nbsp;</span>
+            <span class="lma-shapes triangle-down">&nbsp;</span>
+            <span class="lma-shapes triangle-right">&nbsp;</span>
+            <span class="lma-shapes triangle-left">&nbsp;</span>
+            
+            <span class="lma-shapes yin-yang">&nbsp;</span>
+            <span class="lma-shapes magnifying-glass">&nbsp;</span>
+        </div>
+        
+        <div class="wrapper">
+            <h3>Яндекс карты и кастомизация</h3>
+            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+            <script type="text/javascript">
+                ymaps.ready(init);
+                var myMap, 
+                    myPlacemark;
+
+                function init(){ 
+                    myMap = new ymaps.Map("map", {
+                        center: [55.76, 37.64],
+                        zoom: 7
+                    }); 
+
+                    myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+                        hintContent: 'Москва!',
+                        balloonContent: 'Столица России'
+                    });
+
+                    myMap.geoObjects.add(myPlacemark);
+                }
+            </script>
+            <script type="text/javascript">
+                ymaps.ready(init);
+                var myMap, 
+                    myPlacemark;
+
+                function init(){ 
+                    myMap = new ymaps.Map("mapCustom", {
+                        center: [49.99207514787971,36.27990449999995],
+                        zoom: 7
+                    }); 
+
+                    myPlacemark = new ymaps.Placemark([49.99207514787971,36.27990449999995], {
+                        hintContent: 'Харьков',
+                        balloonContentHeader: "Балун метки",
+                        balloonContentBody: [
+                            '<address>',
+                            '<strong>Офис Яндекса</strong>',
+                            '<br/>',
+                            'Адрес: 119021, ул. Льва Толстого, 16',
+                            '</address>'
+                        ].join(''),
+                        balloonContentFooter: "Подвал",
+                        hintContent: "Хинт метки"
+                        //balloonContent: 'абра-кодабра'
+                    }, {
+                        // Опции.
+                        iconLayout: 'default#image', // Необходимо указать данный тип макета.
+                        iconImageHref: '../img/myMapYa.png', // Своё изображение иконки метки.
+                        iconImageSize: [30, 42], // Размеры метки.
+                        iconImageOffset: [-20, -40] // Смещение левого верхнего угла иконки относительно её "ножки" (точки привязки).
+                    });
+                    
+                    myMap.geoObjects.add(myPlacemark);
+                }
+            </script>
+            <div class="grid-scss">
+                <div class="span col-6">
+                    <div id="map" style="width:100%; height: 400px"></div>
+                </div>
+                <div class="span col-6">
+                    <div id="mapCustom" style="width:100%; height: 400px"></div>
+                </div>
+            </div>
+            
+            <h3>Google карты и кастомизация</h3>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPXJon4bhVlhxgqVRvGBn3zEFjsRI0aY4&sensor=false"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                function initialize() {
+                    //получаем наш div куда будем карту добавлять
+                    var mapCanvas = document.getElementById('mapGoogle');
+                    // задаем параметры карты
+                    var mapOptions = {
+                        //Это центр куда спозиционируется наша карта при загрузке
+                        center: new google.maps.LatLng(48.5, 35),
+                        //увеличение под которым будет карта, от 0 до 18
+                        // 0 - минимальное увеличение - карта мира
+                        // 18 - максимально детальный масштаб
+                        zoom: 7, 
+                        //Тип карты - обычная дорожная карта
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    //Инициализируем карту
+                    var map = new google.maps.Map(mapCanvas, mapOptions);
+
+                    //Объявляем массив с нашими местами и маркерами
+                    var markers = [],
+                        myPlaces = [];
+                    //Добавляем места в массив
+                    myPlaces.push(new Place('Киев', 50.453242, 30.525513, 'Столица Украины'));
+                    myPlaces.push(new Place('Крым', 45.052181, 34.157867, 'Автономная республика Украины'));
+
+                    //Теперь добавим маркеры для каждого места
+                    for (var i = 0, n = myPlaces.length; i < n; i++) {
+                        var marker = new google.maps.Marker({
+                            //расположение на карте
+                            position: new google.maps.LatLng(myPlaces[i].latitude, myPlaces[i].longitude),
+                            map: map,
+                            //То что мы увидим при наведении мышкой на маркер
+                            title: myPlaces[i].name
+                        });
+                        //Добавим попап, который будет появляться при клике на маркер
+                        var infowindow = new google.maps.InfoWindow({
+                            content: '<h1>' + myPlaces[i].name + '</h1><br/>' + myPlaces[i].description
+                        });
+                        //привязываем попап к маркеру на карте
+                        makeInfoWindowEvent(map, infowindow, marker);
+                        markers.push(marker);
+                    }
+                }
+                function makeInfoWindowEvent(map, infowindow, marker) {
+                    //Привязываем событие КЛИК к маркеру
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.open(map, marker);
+                    });
+                }
+                //Это класс для удобного манипулирования местами
+                function Place(name, latitude, longitude, description){
+                    this.name = name;  // название
+                    this.latitude = latitude;  // широта
+                    this.longitude = longitude;  // долгота
+                    this.description = description;  // описание места
+                }
+                //Когда документ загружен полностью - запускаем инициализацию карты.
+                google.maps.event.addDomListener(window, 'load', initialize);
+                });
+            </script>
+            <div class="grid-scss">
+                <div class="span col-6">
+                    <div id="mapGoogle" style="width:100%; height: 400px"></div>
+                </div>
+                <div class="span col-6">
+                    <div style="width:100%; height: 400px"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h3>Голосовалка</h3>
+            <p>
+                made raiting <b>http://biznesguide.ru/coding/162.html</b>, <b>http://ajaxs.ru/lesson/ajax/131-zvezdnyj_rejting_svoimi_rukami.html</b>
+            </p>
+            <div class="rating-wrap">
+                <div style="width: 77%;" class="rating-percent"></div>
+                <div class="rating"></div>
+            </div>
+        </div>
+        
+        <div class="wrapper">
+           <h3>SCSS if-elseIf-else (@else if)</h3>
+            <div class="if-elseIf-else">
+                <p>http://sass-scss.ru/documentation/</p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, nisi sapiente ipsam nihil corrupti dignissimos, sint adipisci delectus ducimus explicabo qui odio perferendis reprehenderit accusamus nobis minima mollitia cupiditate minus. Error optio ratione, deleniti id vero assumenda quam tempore fuga quisquam laudantium! Accusamus, illo eum fugiat ullam delectus, deserunt quisquam.
+                </p>
+            </div>
+            
+            <h3>@for</h3>
+            <ul class="for">
+                <li class="item-1">111</li>
+                <li class="item-2">111</li>
+                <li class="item-3">111</li>
+                <li class="item-4">111</li>
+                <li class="item-5">111</li>
+                <li class="item-6">111</li>
+            </ul>
+            
+            <h3>@while</h3>
+            <ul class="while">
+                <li class="item-1">222</li>
+                <li class="item-2">222</li>
+                <li class="item-3">222</li>
+                <li class="item-4">222</li>
+                <li class="item-5">222</li>
+                <li class="item-6">222</li>
+                <li class="item-7">222</li>
+            </ul>
+
+        </div>
+
+        <div class="shape-circle-test wrapper">
+            <h3>Новая фишка - обтекание текстом не прямоугольных фигур в html</h3>
+            <div class="circle">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, eos, odit?
+            </div>
+            <div class="text">
+            <p>test style <b>shape-outside: circle(50%);</b></p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta aliquam sapiente fugit eum libero nam qui maiores ab. Quam doloribus, dignissimos alias inventore quisquam impedit, perferendis non laboriosam cupiditate suscipit neque iste nihil ea hic a sint voluptates temporibus provident perspiciatis distinctio natus veritatis accusamus ipsa! Dolore odit eaque, nam, temporibus fugit est in autem distinctio rerum ad porro fuga dolorum iure facere ab aut provident, ipsum magnam adipisci perspiciatis ipsa quisquam voluptate voluptatem. Delectus dolore qui quam nisi fugit culpa repellendus quibusdam placeat excepturi, esse quasi nobis, doloremque eius, commodi deleniti. Reiciendis, hic iusto aliquam, sequi sint quasi facilis.
+            </div>
+        </div>
+    </div>
+    
+    //= template/footer.html
+</body>
+</html>

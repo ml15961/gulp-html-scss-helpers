@@ -1,0 +1,1094 @@
+@charset "UTF-8";
+
+@import "partials/fonts";
+@import "partials/colors";
+@import "partials/mixins";
+@import "partials/extends";
+@import "partials/reset";
+/*=== Variables ===*/
+/*=== Font Path ===*/
+@font-face {
+  font-family: 'AngeliqueIcons';
+  src: url("../fonts/AngeliqueIcons.eot?#iefix&v=1.0") format("embedded-opentype"), url("../fonts/AngeliqueIcons.otf?v=1.0") format("opentype"), url("../fonts/AngeliqueIcons.woff?v=1.0") format("woff"), url("../fonts/AngeliqueIcons.ttf?v=1.0") format("truetype"), url("../fonts/AngeliqueIcons.svg?v=1.0#AngeliqueIcons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/*=== Variables ===*/
+.ai-lma:before {
+  content: '\f000'; }
+
+.ai-tree:before {
+  content: '\f001'; }
+
+.ai-sass:before {
+  content: '\f002'; }
+
+.ai-less:before {
+  content: '\f003'; }
+
+.ai-html5:before {
+  content: '\f004'; }
+
+.ai-css3:before {
+  content: '\f005'; }
+
+.ai-js:before {
+  content: '\f006'; }
+
+.ai-firefox:before {
+  content: '\f007'; }
+
+.ai-chrome:before {
+  content: '\f008'; }
+
+.ai-safari:before {
+  content: '\f009'; }
+
+.ai-opera:before {
+  content: '\f010'; }
+
+.ai-ie:before {
+  content: '\f011'; }
+
+.ai-php:before {
+  content: '\f012'; }
+
+.ai-photoshop:before {
+  content: '\f013'; }
+
+.ai-git:before {
+  content: '\f014'; }
+
+/*=== Base Class ===*/
+.ai {
+  display: inline-block; }
+
+.ai:before {
+  font-family: 'AngeliqueIcons';
+  font-size: 1.8rem;
+  line-height: 2.0rem;
+  vertical-align: baseline; }
+
+
+@import "partials/loaders";
+@import "partials/menu";
+@import "partials/responsive-table";
+@import "partials/speech";
+@import "partials/shapes";
+@import "partials/raiting"; //FUTURE СДЕЛАТЬ PHP-РЕЙТИНГ
+@import "partials/customInput";
+@import "partials/parallax-js";
+@import "partials/parallax-scss";
+@import "partials/hovers";
+@import "partials/hovers-custom";
+@import "partials/hovers-buttons";
+@import "partials/carcasses";
+@import "partials/flex-grid";
+@import "partials/tabs";
+
+
+/* === BEGIN Basic Styles === */
+html {
+    background: $purple;
+	min-height: 100%;
+    position: relative;
+}
+body {
+    background: $f1;
+	color: $grayDark;
+    font: {
+        family: 'Alexander', 'Arial', sans-serif;
+        size: 19px;
+    }
+    line-height: 21px;
+}
+
+//TODO сделать ещё несколько страниц-каркасов
+//TODO допилить голосовалку
+//FIXME ПЕРЕПРОВЕРИТЬ ГДЕ ЧТО РАЗЛЕЗЛОСЬ
+
+a {
+	color: $purple / 1.2;
+    
+    &:hover {
+        color: $purple;
+    }
+}
+.clearfix {
+	display: table;
+	width: 100%;
+}
+header, footer {
+	background: $purple;
+	border-top: 1px solid $purple / 1.7;
+    color: $white;
+    padding: 15px;
+}
+footer {
+    p{line-height: 2.2rem;}
+}
+header {
+    @include bgGradient(200deg, $purple * 1.3 70px, $purple 75px);
+    @include flexbox;
+    @include flexFlow(row wrap);
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.logo {
+    color: $white;
+    
+    &:hover {
+        color: $hotpink;
+    }
+}
+.globalWrapper {
+    padding: 15px;
+}
+.wrapper {
+    background: rgba($white, 0.7);
+    border: 1px dotted $purple;
+    padding: 15px;
+    margin-bottom: 30px;
+    
+    p {margin-bottom: 15px;}
+}
+h1, h2, h3, h4, h5, h6 {
+    $h: 30px;
+    color: $orange;
+    font-size: $h;
+    line-height: $h + 3;
+}
+h1 {
+    font-size: 30px;
+    font-size: rem(32);
+}
+h2 {font-size: 28px;}
+h3 {font-size: 26px;}
+h4 {font-size: 24px;}
+h5 {font-size: 22px;}
+h6 {font-size: 20px;}
+hr {
+    background: none;
+    border: none;
+    border-bottom: 1px dashed rgba($black, 0.1);
+    display: block;
+    margin: 15px 0;
+}
+
+#pagination {
+    text-align: center;
+    padding: 0 15px 15px;
+    
+    li {
+        @include bgGradient(200deg, $purple * 1.3 50%, $purple 55%);
+        @include borderRadius (50%);
+        display: inline-block !important;
+        color: $white;
+        cursor: pointer;
+        margin: 0 3px;
+        padding: 5px 9px;
+        
+        &:hover, &.current {
+            background: $mediumvioletred;
+            @include bgGradient(200deg, $mediumvioletred * 1.3 50%, $mediumvioletred 55%);
+        }
+    }
+}
+/* === END Basic Styles === */
+
+.reset {
+    margin: 0;
+    padding: 0;
+}
+.hovers_bg {
+    background: $purple / 2.7;
+    
+    h1, h2 {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h2 {
+        color: $purple / 2.7;
+    }
+}
+
+
+//NOTE ОТСЛЕЖИВАТЬ ОБНОВЛЕНИЯ ЭТОГО СТИЛЯ 
+//FIXME КАК ТОЛЬКО ПОЯВЯТСЯ ОБНОВЛЕНИЯ - ПОЧИНИТЬ
+.shape-circle-test {
+    @include box-sizing(border-box);
+    display: table;
+    width: 100%;
+    
+    .circle {
+        background-size: cover;
+        background: $purple;
+//        -webkit-shape-outside: circle(50%);
+//        -moz-shape-outside: circle(50%);
+//        shape-outside: circle(50%);
+        
+//        -webkit-shape-outside: border-box;
+//        shape-outside: border-box;
+        
+        -webkit-shape-outside: circle(50%);
+        -moz-shape-outside: circle(50%);
+        shape-outside: circle(50%);
+        
+        -webkit-clip-path: circle(50%, 50%, 50%);
+        -moz-clip-path: circle(50%, 50%, 50%);
+        clip-path: circle(50%, 50%, 50%);
+        
+        shape-margin: 20px;
+        
+        width: 100px;
+        height: 100px;
+        float: left;
+        
+        shape-outside: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/circle.png');
+    }
+    
+    .text {
+        @include box-sizing(border-box);
+        margin-left: 130px;
+    }
+}
+
+
+.product_description {
+    padding-bottom: 25px !important;
+    position: relative;
+    
+    &::before, &::after {
+        border: none;
+        border-bottom: 1px dashed $deeppink;
+        color: $deeppink;
+        display: inline-block;
+        white-space: nowrap;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        @include translateX (0);
+        font-size: 19px;
+        width: auto;
+    }
+
+    &::before {
+        background: url('../images/arrow-down.png') right 2px no-repeat;
+        content: 'Читать полностью';
+    }
+
+    &::after {display: none;}
+    
+    
+    
+    
+    h3 {margin-bottom: 15px;}
+    
+    .toggle {
+        height: 61px;
+        overflow: hidden;
+        position: relative;
+        
+        &::before, &::after {
+            position: absolute;
+        }
+        &::before {
+            @include bgGradient(top, rgba($white, 0), rgba($white, 1));
+            content: '';
+            height: 15px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        
+        &::after {
+            bottom: 1px;
+            right: 0;
+        }
+    }
+    
+    .open {
+        height: auto;
+        
+        &::before, &::after {
+            display: none;
+        }
+    }
+}
+
+.textOverflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    margin-top: 50px;
+    max-width: 100px;
+}
+
+
+.if-elseIf-else {
+    $type: monster;
+    p {
+        @if $type == ocean {
+            color: dodgerblue;
+        } @else if $type == matador {
+            color: mediumpurple;
+        } @else if $type == monster {
+            color: orange;
+        } @else {
+            color: black;
+        }
+    }
+}
+.for {
+    [class^="item-"] {
+        background: violet;
+        margin: 5px;
+    }
+    
+    @for $i from 1 through 7 {
+        .item-#{$i} {
+            width: 3em * $i;
+            background: $orangered * $i / 2;
+        }
+    }
+}
+
+.while {
+    [class^="item-"] {
+        background: $greenLight;
+        margin: 5px;
+    }
+    
+    $i: 6;
+    @while $i > 0 {
+        .item-#{$i} {
+            width: 5em * $i;
+            background: $green * $i / 2;
+        }
+        $i: $i - 2;
+    }
+}
+
+
+// как ни крути а .row использовать придётся (была мысль дописывать .padd0 в оборачивающий col-)
+.grid-scss {
+    @include flexbox;
+    @include flexFlow(row wrap);
+    
+    .span {
+        background: rgba($purple, 0.2);
+        @include box-sizing(border-box);
+        color: $white;
+        border: 1px solid rgba($white, 0.5);
+        padding: 5px;
+        
+        @include flexbox;
+        @include flexFlow(row wrap);
+        
+        &.col-1 {width: gridWidth(1);}
+        &.col-2 {width: gridWidth(2);}
+        &.col-3 {width: gridWidth(3);}
+        &.col-4 {width: gridWidth(4);}
+        &.col-5 {width: gridWidth(5);}
+        &.col-6 {width: gridWidth(6);}
+        &.col-7 {width: gridWidth(7);}
+        &.col-8 {width: gridWidth(8);}
+        &.col-9 {width: gridWidth(9);}
+        &.col-10 {width: gridWidth(10);}
+        &.col-11 {width: gridWidth(11);}
+        &.col-12 {width: gridWidth(12);}
+    }
+}
+@media screen and (max-width: 991px) {
+    .grid-scss .span {
+        &.col-1 {
+            background: orangered;
+            width: gridWidth(3);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .grid-scss .span {
+        &.col-1 {
+            background: darkorange;
+            width: gridWidth(6);
+        }
+    }
+}
+@media screen and (max-width: 479px) {
+    .grid-scss .span {
+        &.col-1 {
+            background: orange;
+            width: gridWidth(12);
+        }
+    }
+}
+
+.hover-border {
+    @extend .btn;
+    background: rgba($green, 0.9);
+    
+    &::before {
+        @include transition (all 0.21s);
+        @include borderRadius (5px);
+        $p: 0;
+        border: 0 solid rgba($green, 0.9);
+        position: absolute;
+        top: $p;
+        right: $p;
+        bottom: $p;
+        left: $p;
+    }
+    
+    &:hover {
+        background: rgba($green, 0.9);
+        
+        &::before {
+            $p: -5px;
+            border-width: 3px;
+            border-color: rgba($green, 0.9);
+            top: $p;
+            right: $p;
+            bottom: $p;
+            left: $p;
+        }
+    }
+}
+
+.hover-bg {
+    @extend .btn;
+    @include bgGradientRadio (center, ellipse cover, rgba($green / 1.3, 0.7), rgba($green, 1) 0);
+    z-index: 2;
+    
+    &::before {
+        @include borderRadius (50%);
+        @include transition (all 0.7s);
+        $p: 50%;
+        position: absolute;
+        top: $p;
+        right: $p;
+        bottom: $p;
+        left: $p;
+        z-index: -1;
+    }
+    
+    &:hover, &:active/*, &:link, &:visited*/ {
+        
+        &::before {
+            @include borderRadius (3px);
+            @include bgGradientRadio (center, ellipse cover, rgba($white, 0.25) 100%, rgba($greenLight, 0.9));
+            $p: 0;
+            position: absolute;
+            top: $p;
+            right: $p;
+            bottom: $p;
+            left: $p;
+        }
+    }
+}
+
+.hover-bg2 {
+    @extend .btn;
+    @include transition (background 0.7s);
+    @include bgGradientRadio (center, ellipse cover, rgba($green / 1.3, 0.7), rgba($greenLight, 0.9));
+    @include bgSize (100% 200%);
+    
+    &:hover {
+        @include bgSize (10% 20%);
+        background-position: 0 -100%;
+    }
+}
+
+.hover-bg3 {
+    @extend .btn;
+    @include transition (background 0.7s);
+    @include bgGradient (left, rgba($green / 1.3, 0.7), rgba($greenLight, 0.9));
+    @include bgSize (270% 100%);
+    
+    &:hover {
+        @include bgSize (270% 100%);
+        background-position: -100% 0;
+    }
+}
+
+.hover-bg4 {
+    @extend .btn;
+    @include transition (background 0.7s);
+    @include bgGradientRadio (center, ellipse cover, rgba($green / 1.3, 1), rgba($greenLight, 1));
+    @include bgSize (700%);
+    background-repeat: no-repeat;
+    
+    &:hover {
+        @include bgSize (100% 200%);
+        background-position: 100%;
+    }
+}
+
+.noGoTo {
+    color: darkorange;
+    pointer-events: none;
+}
+
+/*=== Material Design
+=== http://habrahabr.ru/company/redmadrobot/blog/252773/ ===*/
+
+
+//TODO СДЕЛАТЬ РАЗНЫЕ ВАРИАЦИИ ХОВЕРОВ И ПРОРАБОТАТЬ ТАБЛИЦУ ДИВАМИ
+.spiski {
+    @include flexbox;
+    @include flexFlow(row wrap);
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.lma-list {
+    width: 23%;
+    margin: 0 1% 30px;
+    
+    &.rounded {
+        counter-reset: li;
+        
+        li {
+            background: rgba($hotpink, 0.15);
+            margin-left: 4.5%;
+            margin-bottom: 7px;
+            padding: 7px 7px 7px 37px;
+            position: relative;
+            
+            &::before {
+                @include transition (.3s);
+                @include box-sizing(border-box);
+                @include borderRadius (50%);
+                background: $hotpink;
+                border: 3px solid $white;
+                content: counter(li);
+                counter-increment: li;
+                text-align: center;
+                font-weight: bold;
+                padding: 7px 13px;
+                position: absolute;
+                left: -4.5%;
+                top: -3px;
+            }
+            
+            &:hover {
+                background: rgba($hotpink, 0.3);
+                
+                &:before {
+                    transform: rotate(-350deg);
+                }
+            }
+        }
+    }
+    
+    &.rectangle {
+        counter-reset: li;
+        
+        li {
+            background: rgba($orange, 0.3);
+            margin-left: 43px;
+            margin-bottom: 7px;
+            padding: 7px 7px 7px 15px;
+            position: relative;
+            
+            &::before {
+                background: rgba($orange, 1);
+                border-right: 7px solid $white;
+                content: counter(li);
+                counter-increment: li;
+                font-weight: bold;
+                text-align: center;
+                padding: 7px 13px;
+                position: absolute;
+                right: 100%;
+                top: 0;
+            }
+            
+            &::after {
+                @include transition (all .3s ease-out);
+                border: .5em solid transparent;
+                position: absolute;
+                content: '';
+                right: 100%;
+                top: 50%;
+                margin-top: -.5em;
+            }
+            
+            &:hover {
+                background: rgba($orange, 0.15);
+                
+                &::after {
+                    border-left-color: rgba($orange, 1);
+                    right: 97.7%;
+                }
+            }
+        }
+    }
+    
+    &.border {
+        li {
+            @include transition (border .3s linear);
+            border-left: 10px solid $orangered; 
+            box-shadow: 0 0 3px 0 rgba($black, .2);
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 7px;
+            padding: 7px 15px;
+            
+            &:nth-child(2){border-color: $orange;}
+            &:nth-child(3){border-color: $greenLight;}
+            &:nth-child(4){border-color: $blueSea;}
+            &:nth-child(5){border-color: $purple;}
+            
+            &:hover {
+                border-left: 10px solid transparent;
+                
+                &:nth-child(1) {border-right: 10px solid $orangered;}
+                &:nth-child(2) {border-right: 10px solid $orange;}
+                &:nth-child(3) {border-right: 10px solid $greenLight;}
+                &:nth-child(4) {border-right: 10px solid $blueSea;}
+                &:nth-child(5) {border-right: 10px solid $purple;}
+            }
+        }
+    }
+
+    &.first  {
+        li {
+            @include bgGradient(left, $green 0%, $white);
+            box-shadow: 0 5px 5px 0 rgba($black, .2);
+            color: $white;
+            margin-bottom: 7px;
+            padding: 7px 15px;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &.menuBar {
+        background: rgba($black, 0.01);
+        border: 1px solid rgba($black, .2);
+        
+        li {
+            @include flexbox;
+            @include flexFlow(row wrap);
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            
+            border-bottom: 1px dotted rgba($black, 0.1);
+            color: rgba($blue2, 0.5);
+            padding: 5px 15px 1px;
+            
+            &:first-child {
+                @include borderRadius (0 0 7px 7px);
+                -webkit-justify-content: flex-start;
+                justify-content: flex-start;
+                background: $white;
+                box-shadow: 0 7px 7px -5px rgba($black, .2);
+                color: $blue;
+                font-size: 24px;
+                margin-bottom: 10px;
+                padding: 11px 10px;
+                
+                &::before {
+                    content: "\2749";
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &.dbl-border {
+        li {
+            background: rgba($deeppink, 0.1);
+            border-left: 5px solid $greenLight;
+            margin-left: 10px;
+            margin-bottom: 7px;
+            padding: 7px 15px;
+            position: relative;
+            
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                width: 5px;
+            }
+            
+            &::before {
+                background: $orange;
+                height: 32%;
+                top: 35%;
+                left: -15px;
+            }
+            
+            &::after {
+                background: $mediumvioletred;
+                height: 60%;
+                top: 20%;
+                left: -10px;
+            }
+        }
+    }
+
+    &.ball {
+        li {
+            margin-left: 30px;
+            margin-bottom: 7px;
+            padding: 7px 15px;
+            position: relative;
+            
+            &::before, &::after {
+                @include borderRadius (50%);
+                @include transition (all .3s linear);
+                content: '';
+                position: absolute;
+            }
+            
+            &::before {
+                background: $gold;
+                width: 15px;
+                height: 15px;
+                top: 7px;
+                left: -30px;
+                z-index: 2;
+            }
+            
+            &::after {
+                background: $greenLight;
+                width: 30px;
+                height: 30px;
+                left: -30px;
+                top: 0;
+            }
+            
+            &:hover {
+                &:before {
+                    left: -15px;
+                }
+            }
+        }
+    }
+
+    &.beads {
+        background: rgba($gold, 0.1);
+        
+        li {
+            border-bottom: 1px dotted rgba($black, 0.07);
+            position: relative;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            &::before, &::after {
+                @include borderRadius (50%);
+                @include transition (all .5s linear);
+                content: '';
+                position: absolute;
+            }
+            &::before {
+                background: $orange / 1.5;
+                border-radius: 50%;
+                content: '';
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                left: 10px;
+                top: 3px;
+            }
+            
+            &::after {
+                $wh: 6px;
+                background: $orange / 1.5;
+                width: $wh;
+                height: $wh;
+                bottom: 3px;
+                left: 10px;
+            }
+        }
+        
+        a {
+            display: block;
+            padding: 7px 7px 7px 30px;
+            position: relative;
+            
+            &:before {
+                @include borderRadius (50%);
+                @include transition (all .5s linear);
+                content: '';
+                position: absolute;
+                
+                $wh: 10px;
+                background: $greenLight;
+                width: $wh;
+                height: $wh;
+                top: 50%;
+                left: 8px;
+                margin-top: -5px;
+            }
+            
+            &:hover {
+                &::before {
+                    background: $orange;
+                }
+            }
+        }
+    }
+
+    &.dotted {
+        
+        li {
+            @include flexbox;
+            @include flexFlow(row wrap);
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            background: $f1;
+            margin-bottom: 5px;
+            padding: 3px 7px;
+            
+            span {
+                &:first-child, &:last-child {
+                    margin-top: 5px;
+                }
+                
+                &:last-child {
+                    padding-left: 5px;
+                    text-align: right;
+                }
+            }
+        }
+        
+        span {
+            flex-grow: 1;
+        }
+        
+        .dots {
+            flex-grow: 95;
+            border-bottom: 1px dashed $purple;
+        }
+    }
+
+    &.bullet {
+        counter-reset: li;
+        
+        li {
+            border-top: 2px solid rgba($hotpink, .15);
+            border-left: 2px solid rgba($hotpink, .15);
+            border-radius: 4px;
+            margin-bottom: 7px;
+            padding: 7px 15px;
+            position: relative;
+            
+            &::before {
+                background: $white;
+                border-top: 3px solid rgba($hotpink, .15);
+                border-left: 3px solid rgba($hotpink, .15);
+                border-radius: 50%;
+                counter-increment: li;
+                content: counter(li);
+                color: rgba($hotpink, .7);
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 1;
+                position: absolute;
+                top: -7px;
+                left: -7px;
+                padding: 1px 5px;
+            }
+        }
+    }
+
+    &.pills {
+        counter-reset: li;
+        
+        li {
+            background: rgba($black, .075);
+            padding: 7px 15px;
+            margin-left: 5%;
+            margin-bottom: 7px;
+            position: relative;
+            
+            &::before {
+                background: $greenLight;
+                border-bottom-left-radius: 70em;
+                border-top-left-radius: 70em;
+                counter-increment: li;
+                content: counter(li);
+                color: $white;
+                padding: 10px 7px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 100%;
+            }
+        }
+    }
+
+    &.square {
+        counter-reset: li;
+        
+        li {
+            position: relative;
+            margin: 0 0 10px 2em;
+            padding: 4px 9px;
+            border-top: 2px solid $green;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+            
+            &::before {
+                @include transition (.3s linear);
+                @include box-sizing(border-box);
+                background: $green;
+                border-top: 2px solid $green;
+                border-left: 2px solid transparent;
+                border-right: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+                content: counter(li);
+                counter-increment: li;
+                color: $white;
+                text-align: center;
+                margin-right: 8px;
+                padding: 4px;
+                width: 2em;
+                position: absolute;
+                top: -2px;
+                left: -2em;
+            }
+            
+            &:hover {
+                border-top: 2px solid $orange;
+                
+                &::before {
+                    background: rgba($white, .5);
+                    border: 2px solid $orange;
+                    color: $orange / 1.1;
+                }
+            }
+        }
+    }
+
+    &.zebra {
+        border-left: 7px solid $blueSea;
+        
+        li {
+            padding: 10px;
+            
+            &:nth-child(2n-1) {
+                background: $f1;
+            }
+        }
+    }
+
+    &.push {
+        li {
+            cursor: pointer;
+            color: $greenLight;
+            padding: 10px 5px 10px 35px;
+            position: relative;
+            
+            &::before {
+                @include transition (.3s ease-in-out);
+                background: $greenLight;
+                border-radius: 50%;
+                content: '';
+                width: 7px;
+                height: 7px;
+                position: absolute;
+                left: 0;
+                top: 17px;
+            }
+            
+            &::after {
+                border-left: 1px dotted $greenLight;
+                content: '';
+                width: 1px;
+                position: absolute;
+                top: 30px;
+                bottom: -10px;
+                left: 3px;
+            }
+            
+            &:hover {
+                &::before{
+                    box-shadow: 0 0 0 7px rgba($greenLight, .2)
+                }
+            }
+            
+            &:last-child {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    &.holiday {
+        @include flexbox;
+        @include flexFlow(row wrap);
+        
+        dt, dd {
+            @include box-sizing(border-box);
+            margin-bottom: 7px;
+            padding: 7px 15px;
+        }
+        
+        dt {
+            background: rgba($blueSea, .7);
+            color: $white;
+            width: 19%;
+        }
+        dd {
+            border: 1px solid rgba($blueSea, .7);
+            border-left: none;
+            color: $blueSea / 1.1;
+            width: 81%;
+        }
+    }
+    
+    @import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great|EB+Garamond);
+    &.older {
+        counter-reset: li;
+        
+        li {
+            box-shadow: 0 1px 4px rgba($black, 0.2), 0 0 30px rgba($orangered, .12) inset;
+            color: $grayDark * 1.5;
+//            font-family: 'EB Garamond', serif;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 7px;
+            padding: 7px;
+            
+            &::before {
+                @include transition (.4s linear);
+                box-shadow: 0 1px 4px rgba($black, 0.2), 0 0 15px rgba($orangered, .07) inset;
+                display: inline-block;
+                content: counter(li);
+                counter-increment: li;
+                font-family: 'Fredericka the Great', cursive;
+                font-size: 24px;
+                text-align: center;
+                width: 30px;
+                height: 30px;
+                margin-right: 20px;
+            }
+            
+            &:hover {
+                &::before {
+                    color: $green;
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+@import "partials/media";

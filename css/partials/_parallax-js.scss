@@ -1,0 +1,36 @@
+/* === BEGIN PARALLAX JS === */
+.page {
+	height: 100vh;
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	position: relative;
+    
+    @include flexbox;
+    @include flexFlow(row nowrap);
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.home {
+	background: url('../img/parallax-js/sea_001.jpg') center 0 repeat fixed;
+	background-size: 100%;
+}
+.about {
+	background: url('../img/parallax-js/sea_002.jpg') center 0 repeat fixed;
+	background-size: 100%;
+	box-shadow: 0 0 10px rgba($black,0.8);
+}
+.contact {
+	background: url('../img/parallax-js/flowers.jpg') center top repeat fixed;
+	background-size: 100%;
+	box-shadow: 0 0 10px rgba($black,0.8);
+}
+
+article {
+    background: rgba($white, 0.5);
+    text-align: center;
+    padding: 30px;
+}
+/* === END PARALLAX JS === */

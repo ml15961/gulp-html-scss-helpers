@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hovers</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/watermark.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body class="hovers_bg reset">
+    //= template/header.html
+    
+    <h1>Watermark</h1>
+    <div class="grid-scss subCol">
+        <div class="span col-3"><img class="watermark" src="img/hovers/1.jpg" alt=""/></div>
+        <div class="span col-3"><img class="watermark" src="img/hovers/7.jpg" alt=""/></div>
+        
+        <script>
+            var load = false;
+            window.onload = function(){
+                if(!load) {
+                    wmark.init({
+                        /* config goes here */
+                        "position": "bottom-right", // default "bottom-right"
+                        "opacity": 40, // default 50
+                        "className": "watermark", // default "watermark"
+                        "path": "img/logo-lma-small.png"
+                    });
+
+                    load = true;
+                }
+            }
+        </script>
+    </div>
+    
+    
+    <h1>Hovers</h1>
+    
+    <div class="grid-scss lma_img">
+        <figure class="lma_img_effs eff1">
+            <img class="watermark" src="img/hovers/1.jpg" alt=""/>
+            <figcaption>
+                <div>
+                    <div class="title">Прекрасная <span>Яблоня</span></div>
+                    <div class="descr">Яблоня в пасмурную погоду, после небольшого дождика</div>
+                </div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff2">
+            <img class="watermark" src="img/hovers/2.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Дикая <span>Орхидея</span></div>
+                <div class="descr">В наше время орхидные найдены на всех континентах, кроме Антарктиды.</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff3">
+            <img class="watermark" src="img/hovers/3.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Белая <span>Черешня</span></div>
+                <div class="descr">Небольшой город Керасунт между Фарнакией и Трапезундом славился вишнями.</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff4">
+            <img class="watermark" src="img/hovers/4.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Цветок <span>Шафран</span></div>
+                <div class="descr">Род многолетних клубнелуковичных травянистых растений семейства Ирисовые, или Касатиковые (Iridaceae).</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff5">
+            <img class="watermark" src="img/hovers/5.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Wild <span>Romeo</span></div>
+                <div class="descr">Romeo never knows what he wants. He seemed to be very cross about something.</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff6">
+            <img class="watermark" src="img/hovers/6.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Тюльпан <span>Mon Amour</span></div>
+                <div class="descr">Милое, прекрасное, весеннее солнышко на поляне</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff7">
+            <img class="watermark" src="img/hovers/7.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Милая <span>Пчела</span> <i>Сейчас</i></div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff8">
+            <img class="watermark" src="img/hovers/8.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Под <span>Водой</span></div>
+                <div class="descr">Ночной и дневной подводный мир прекрасен и очарователен</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff9">
+            <img class="watermark" src="img/hovers/9.jpg" alt=""/>
+            <figcaption>
+                <div class="title">прекрасный <span>Шиповник</span></div>
+                <div class="descr">Далеко-далеко за словесными горами в стране.</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff10">
+            <img class="watermark" src="img/hovers/10.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Цвет <span>Калины</span></div>
+                <div class="descr">Далеко-далеко за словесными горами в стране.</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff11">
+            <img class="watermark" src="img/hovers/11.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Розовый <span>Фламинго</span></div>
+                <div class="descr">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Запятых взгляд, пустился там речью!</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff12">
+            <img class="watermark" src="img/hovers/12.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Белая <span>Роза</span></div>
+                <div class="descr">Далеко-далеко за словесными горами в стране.</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff13">
+            <img class="watermark" src="img/hovers/13.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Сиреневый <span>Тюльпан</span></div>
+                <div class="descr">Далеко-далеко за словесными горами в стране.</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff14">
+            <img class="watermark" src="img/hovers/14.jpg" alt=""/>
+            <figcaption>
+                <div class="title">тюльпан <span>попугай</span></div>
+                <div class="icon-links">
+                    <!--<a href="#"><i class="ai ai-firefox">&nbsp;</i></a>
+                    <a href="#"><i class="ai ai-lma">&nbsp;</i></a>-->
+                    <a href="#"><i class="ai ai-tree">&nbsp;</i></a>
+                </div>
+                <div class="description">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</div>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs eff15">
+            <img class="watermark" src="img/hovers/15.jpg" alt=""/>
+            <figcaption>
+                <div class="title">Silly <span>Chico</span></div>
+                <div class="descr">Далеко-далеко за словесными горами в стране.</div>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+    </div>
+    
+    <h1>Demo - Circle</h1>
+
+    <div class="grid-scss lma_img">
+        
+        <figure class="lma_img_effs2 circle eff1">
+            <span class="spinner"></span>
+            <span class="img"><img class="watermark" src="img/hovers/1a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff2 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/2a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff2 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/3a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff2 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/4a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff2 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/5a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff3 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/6a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff3 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/7a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff3 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/8a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff3 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/10a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff4 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/11a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff4 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/12a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff4 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/13a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff4 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/14a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff5">
+            <span class="img"><img class="watermark" src="img/hovers/15a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff6 scale_up">
+            <span class="img"><img class="watermark" src="img/hovers/16a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff6 scale_down">
+            <span class="img"><img class="watermark" src="img/hovers/17a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff6 scale_down_up">
+            <span class="img"><img class="watermark" src="img/hovers/18a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff7 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/19a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff7 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/20a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff7 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/21a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff7 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/22a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff8 left_to_right">
+            <div class="img-container">
+                <span class="img"><img class="watermark" src="img/hovers/23a.jpg" alt="" /></span>
+            </div>
+            <div class="info-container">
+                <figcaption class="info">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </figcaption>
+            </div>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff8 right_to_left">
+            <div class="img-container">
+                <span class="img"><img class="watermark" src="img/hovers/24a.jpg" alt="" /></span>
+            </div>
+            <div class="info-container">
+                <figcaption class="info">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </figcaption>
+            </div>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff8 top_to_bottom">
+            <div class="img-container">
+                <span class="img"><img class="watermark" src="img/hovers/25a.jpg" alt="" /></span>
+            </div>
+            <div class="info-container">
+                <figcaption class="info">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </figcaption>
+            </div>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff8 bottom_to_top">
+            <div class="img-container">
+                <span class="img"><img class="watermark" src="img/hovers/26a.jpg" alt="" /></span>
+            </div>
+            <div class="info-container">
+                <figcaption class="info">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </figcaption>
+            </div>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff9 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/27a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff9 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/28a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff9 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/29a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff9 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/30a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff10 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/1a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff10 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/2a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff11 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/3a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff11 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/4a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff11 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/5a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff11 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/6a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff12 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/7a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff12 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/8a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff12 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/9a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff12 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/10a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff13 from_left_and_right">
+            <span class="img"><img class="watermark" src="img/hovers/11a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    <span class="descr">Краткое описание</span>
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff13 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/12a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    <span class="descr">Краткое описание</span>
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff13 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/13a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    <span class="descr">Краткое описание</span>
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff14 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/14a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff14 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/15a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff14 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/16a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff14 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/17a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff15 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/18a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff16 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/19a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff16 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/20a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff17">
+            <span class="img"><img class="watermark" src="img/hovers/21a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff18 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/22a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff18 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/23a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff18 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/24a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff18 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/25a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff19">
+            <span class="img"><img class="watermark" src="img/hovers/26a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                Краткое описание
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff20 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/27a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 circle eff20 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/28a.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="info-back">
+                    <span class="title">Заголовок</span>
+                    Краткое описание
+                </span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+    </div>
+    <div class="grid-scss lma_img">
+
+        <figure class="lma_img_effs2 square eff1 left_and_right">
+            <span class="img"><img class="watermark" src="img/hovers/1.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff1 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/2.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff1 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/3.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff2">
+            <span class="img"><img class="watermark" src="img/hovers/4.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff3 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/5.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff3 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/6.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff4">
+            <span class="img"><img class="watermark" src="img/hovers/7.jpg" alt="" /></span>
+            <div class="mask1"></div>
+            <div class="mask2"></div>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff5 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/8.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff5 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/9.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff6 from_top_and_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/10.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff6 from_left_and_right">
+            <span class="img"><img class="watermark" src="img/hovers/11.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff6 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/12.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff6 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/13.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff7">
+            <span class="img"><img class="watermark" src="img/hovers/14.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff8 scale_up">
+            <span class="img"><img class="watermark" src="img/hovers/15.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff8 scale_down">
+            <span class="img"><img class="watermark" src="img/hovers/16.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff9 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/17.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff9 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/18.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff9 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/19.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff9 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/20.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff10 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/21.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff10 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/22.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff10 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/23.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff10 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/24.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff11 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/25.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff11 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/26.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff11 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/27.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff11 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/28.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff12 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/29.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff12 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/30.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+                <a href="#">Подробнее</a>
+            </figcaption>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff12 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/1.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff12 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/2.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff13 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/3.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff13 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/4.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff13 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/5.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff13 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/6.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff14 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/7.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff14 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/8.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff14 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/9.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff14 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/10.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff15 left_to_right">
+            <span class="img"><img class="watermark" src="img/hovers/11.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff15 right_to_left">
+            <span class="img"><img class="watermark" src="img/hovers/12.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff15 top_to_bottom">
+            <span class="img"><img class="watermark" src="img/hovers/13.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+
+        <figure class="lma_img_effs2 square eff15 bottom_to_top">
+            <span class="img"><img class="watermark" src="img/hovers/14.jpg" alt="" /></span>
+            <figcaption class="info">
+                <span class="title">Заголовок</span>
+                <span class="descr">Краткое описание</span>
+            </figcaption>
+            <a href="#">Подробнее</a>
+        </figure>
+    </div>
+	
+</body>
+</html>

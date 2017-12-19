@@ -1,0 +1,78 @@
+/* === BEGIN MEDIA === */
+
+/* ======================
+$mobile-small 240px
+$mobile-large 320px
+$tablet-small 480px
+$tablet-large 768px
+$screen-small 1024px
+$screen-large 1280px 
+====================== */ 
+
+/*--- $screen-large 1280px ---*/
+@media screen and (min-width: 1200px) {
+    [class*="col-lg-"] {
+//        background: red !important;
+    }
+}
+
+/*--- $screen-small 1024px ---*/
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .lma-list {
+        width: gridWidth(4) - 2%;
+    }
+    
+    .loaders_wrap section {
+        width: gridWidth(3);
+    }
+}
+@media screen and (max-width: 1199px) {
+    .subCol [class*="col-"] {
+        width: gridWidth(6) !important;
+    }
+}
+/*--- $tablet-large 768px ---*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .lma-list {
+        width: gridWidth(6) - 2%;
+    }
+    
+    .loaders_wrap section {
+        width: gridWidth(4);
+    }
+}
+
+/*--- $tablet-small 480px ---*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+@media screen and (max-width: 767px) {
+    .lma-list {
+        width: gridWidth(12);
+        margin: 0 0 15px;
+    }
+    
+    .loaders_wrap section {
+        width: gridWidth(6);
+    }
+}
+
+/*--- $mobile-large 320px ---*/
+@media screen and (min-width: 320px) and (max-width: 479px) {
+    
+}
+@media screen and (max-width: 479px) {
+    .loaders_wrap section {
+        width: gridWidth(12);
+    }
+    
+    .subCol [class*="col-"] {
+        width: gridWidth(12) !important;
+    }
+}
+
+/*--- $mobile-small 240px ---*/
+@media screen and (max-width: 319px) {
+}
+
+/* === END MEDIA === */

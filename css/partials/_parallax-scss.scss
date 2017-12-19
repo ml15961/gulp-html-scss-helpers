@@ -1,0 +1,26 @@
+/* === BEGIN PARALLAX CSS === */
+.page-css {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 5px 5px rgba($black,0.5);
+    height: 100vh;
+    
+    @include flexbox;
+    @include flexFlow(row nowrap);
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.home-css {
+    background-image: url('../img/parallax-css/liliya.jpg');
+}
+.about-css {
+    background-image: url('../img/parallax-css/pencils.jpg');
+}
+.contact-css {
+    background-image: url('../img/parallax-css/pencils-001.jpg');
+    height: 100vh;
+}
+/* === END PARALLAX CSS === */

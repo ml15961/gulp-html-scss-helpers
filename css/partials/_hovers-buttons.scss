@@ -1,0 +1,853 @@
+/* === BEGIN HOVERS BUTTONS === */
+[class*="btn-eff-"] {
+    border-bottom: 1px dotted rgba($hotpink, 0.5);
+    padding: 1% 5%;
+    text-align: center;
+    
+    & {
+        *::after, *::before {@include box-sizing(border-box);}
+    }
+    
+    &:nth-child(3n-2) {
+        a {color: $purple;}
+    }
+
+    &:nth-child(3n-1) {
+        a {color: $green;}
+    }
+
+    &:nth-child(3n) {
+        a {color: $orange / 1.35;}
+    }
+    
+    a {
+        display: inline-block;
+        color: $white;
+        font-family: 'trebuchet ms', sans-serif;
+        font-weight: normal;
+        font-size: 19px;
+        margin: 7px 1.5%;
+        position: relative;
+        outline: none;
+
+        &:hover, &:focus {
+            outline: none;
+            color: $white;
+        }
+    }
+}
+
+.btn-eff-1 {
+    a {
+        &::before, &::after {
+            @include transition-transform_op (transform 0.3s, opacity 0.2s);
+            display: inline-block;
+            opacity: 0;
+        }
+
+        &::before {
+            @include translateX (20px);
+            content: '(';
+            margin-right: 10px;
+        }
+
+        &::after {
+            @include translateX (-20px);
+            content: ')';
+            margin-left: 10px;
+        }
+
+        &:hover, &:focus {
+            color: $purple;
+            
+            &::before, &::after {
+                @include translateX (0);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn-eff-2 {
+    a {
+        @include perspective (1000px);
+
+        span {
+            @include transition-transform (transform 0.3s);
+            @include transformOrigin (50% 0);
+            background: $hotpink / 1.35;
+            display: inline-block;
+            color: $white;
+            padding: 7px 14px;
+            position: relative;
+
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+//            -ms-transform-style: preserve-3d; //IE, к сожалению, не поддерживает transform-style: preserve-3d. Вообще.
+            transform-style: preserve-3d;
+
+            &::before {
+                @include transition (background 0.3s);
+                @include transformRotateX (-90deg);
+                @include transformOrigin (50% 0);
+                background: $orange;
+                content: attr(data-hover);
+                width: 100%;
+                height: 100%;
+                padding: 7px 14px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+        }
+
+        &:hover, &:focus {
+            span {
+                -webkit-transform: rotateX(90deg) translateY(-22px);
+                -moz-transform: rotateX(90deg) translateY(-22px);
+                transform: rotateX(90deg) translateY(-22px);
+            }
+        }
+    }
+}
+
+.btn-eff-3 {
+    a {
+        padding: 8px 0;
+
+        &::after {
+            @include transition-transform_op (transform 0.3s, opacity 0.03s);
+            @include translateY (10px);
+            background: rgba($black, 0.1);
+            content: '';
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+        }
+
+        &:hover, &:focus {
+            color: $orange / 1.35;
+            
+            &::after {
+                @include translateY (0px);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn-eff-4 {
+    a {
+        padding: 0 0 10px;
+
+        &::after {
+            @include translateY (-10px);
+            background: rgba($black, 0.1);
+            content: '';
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            
+            -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+            -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+            transition: height 0.3s, opacity 0.3s, transform 0.3s;
+        }
+
+        &:hover, &:focus {
+            color: $purple;
+            
+            &::after {
+                @include translateY (0);
+                height: 3px;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn-eff-5 {
+    a {
+        height: 1.1em;
+        overflow: hidden;
+        padding: 0 4px;
+
+        span {
+            @include transition-transform (transform 0.3s);
+            display: inline-block;
+            position: relative;
+
+            &::before {
+                content: attr(data-hover);
+                position: absolute;
+                top: 100%;
+                
+                -webkit-transform: translate3d(0,0,0);
+                -moz-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+            }
+        }
+
+        &:hover, &:focus {
+            span {
+                @include translateY (-100%);
+                color: rgba($mediumvioletred, 0.7);
+            }
+        }
+    }
+}
+
+.btn-eff-6 {
+    a {
+        padding: 10px 20px;
+
+        &::before {
+            @include transition (top 0.3s);
+            background: $orange / 1.35;
+            content: '';
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            @include transition (height 0.3s);
+            background: $orange / 1.35;
+            content: '';
+            width: 2px;
+            height: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &:hover {
+            color: $orange / 1.35;
+            
+            &::before {
+                top: 100%;
+                opacity: 1;
+            }
+
+            &::after {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.btn-eff-7 {
+    a {
+        padding: 12px 10px 10px;
+
+        &::before, &::after {
+            @include transition-transform (transform 0.3s);
+            @include transformScale (0.85);
+            background: $purple;
+            content: '';
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+
+        &::after {
+            opacity: 0;
+            
+            -webkit-transition: top 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+            -moz-transition: top 0.3s, opacity 0.3s, -moz-transform 0.3s;
+            transition: top 0.3s, opacity 0.3s, transform 0.3s;
+        }
+
+        &:hover, &:focus {
+            color: $purple;
+            
+            &::before, &::after {
+                @include transformScale (1);
+            }
+
+            &::after {
+                top: 0%;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn-eff-8 {
+    a {
+        border: 3px solid $green;
+        padding: 7px 15px;
+        position: relative;
+
+        &::after {
+            @include transition-transform_op (transform 0.3s, opacity 0.03s);
+            border: 3px solid $orange;
+            content: '';
+            $p: -3px;
+            position: absolute;
+            top: $p;
+            right: $p;
+            bottom: $p;
+            left: $p;
+            opacity: 0;
+            
+            -webkit-transform: translateY(-11px) translateX(11px);
+            -moz-transform: translateY(-11px) translateX(11px);
+            transform: translateY(-11px) translateX(11px);
+        }
+
+        &:hover, &:focus {
+            color: $orange;
+
+            &::after  {
+                opacity: 1;
+                -webkit-transform: translateY(0) translateX(0);
+                -moz-transform: translateY(0) translateX(0);
+                transform: translateY(0) translateX(0);
+            }
+        }
+    }
+}
+
+.btn-eff-9 {
+    a {
+        padding: 18px 20px;
+
+        &::before, &::after {
+            background: $orange / 1.35;
+            content: '';
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.2;
+            
+            -webkit-transition: opacity 0.3s, height 0.3s;
+            -moz-transition: opacity 0.3s, height 0.3s;
+            transition: opacity 0.3s, height 0.3s;
+        }
+
+        &::after {
+            @include transition-transform_op (transform 0.3s, opacity 0.03s);
+            @include translateY (-10px);
+            top: 100%;
+            opacity: 0;
+        }
+
+        span:first-child {
+            z-index: 2;
+            display: block;
+        }
+
+        span:last-child {
+            @include transition-transform_op (transform 0.3s, opacity 0.03s);
+            @include translateY (-100%);
+            display: block;
+            color: rgba($black,0.4);
+            font-size: 0.75em;
+            padding: 8px 0 0 0;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        &:hover, &:focus {
+            color: $orange / 1.35;
+
+            &::before {
+                height: 6px;
+            }
+
+            &::before, &::after {
+                @include translateY (0);
+                opacity: 1;
+            }
+
+            span:last-child {
+                @include translateY (0);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn-eff-10  {
+    position: relative;
+    z-index: 1;
+
+    a {
+        color: $white !important;
+        overflow: hidden;
+
+        span {
+            @include transition-transform (transform 0.3s);
+            background: rgba($purple / 1.7, 1);
+            display: block;
+            padding: 10px 20px;
+        }
+
+        &::before {
+            @include transition-transform (transform 0.3s);
+            background: $white;
+            color: rgba($purple / 1.7, 1);
+            content: attr(data-hover);
+            width: 100%;
+            height: 100%;
+            padding: 10px 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        &:hover, &:focus {
+            span {
+                @include translateX (100%);
+            }
+
+            &::before {
+                @include translateX (0%);
+            }
+        }
+    }
+}
+
+.btn-eff-11 {
+    a {
+        padding: 10px 0;
+        border-top: 2px solid rgba($black,0.3);
+        color: rgba($black,0.3);
+
+        &::before {
+            @include transition (max-width 0.5s);
+            border-bottom: 2px solid $deeppink;
+            color: $deeppink;
+            content: attr(data-hover);
+            max-width: 0;
+            overflow: hidden;
+            padding: 10px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &:hover, &:focus {
+            &::before {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.btn-eff-12 {
+    a {
+        &::before, &::after {
+            @include transition-transform_op (transform 0.3s, opacity 0.3s);
+            border: 2px solid rgba($black, 0.1);
+            border-radius: 50%;
+            content: '';
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+            
+            -webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+            -moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+            transform: translateX(-50%) translateY(-50%) scale(0.2);
+        }
+
+        &::after {
+            border-width: 6px;
+            width: 90px;
+            height: 90px;
+            
+            -webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+            -moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+            transform: translateX(-50%) translateY(-50%) scale(0.8);
+        }
+
+        &:hover, &:focus {
+            color: $green;
+            
+            &::before, &::after {
+                opacity: 1;
+                
+                -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+                -moz-transform: translateX(-50%) translateY(-50%) scale(1);
+                transform: translateX(-50%) translateY(-50%) scale(1);
+            }
+        }
+    }
+}
+
+.btn-eff-13 {
+    a {
+        @include transition (color 0.3s);
+
+        &::before {
+            @include translateX (-50%);
+            color: transparent;
+            content: '* * *';
+            font-size: 1.2em;
+            pointer-events: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+        }
+
+        &:hover, &:focus {
+            color: rgba($orange, 1);
+
+            &::before {
+                color: rgba($orange, 1);
+            }
+        }
+    }
+}
+
+.btn-eff-14 {
+    a {
+        padding: 13px 20px;
+
+        &::before, &::after {
+            @include transition (all 0.3s);
+            @include transformRotate (90deg);
+            background: $orangered;
+            content: '';
+            pointer-events: none;
+            width: 45px;
+            height: 2px;
+            position: absolute;
+            opacity: 0.2;
+        }
+
+        &::before {
+            @include transformOrigin (0 0);
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            @include transformOrigin (100% 0);
+            right: 0;
+            bottom: 0;
+        }
+
+        &:hover, &:focus {
+            color: $orangered;
+            
+            &::before, &::after {
+                opacity: 1;
+            }
+
+            &::before {
+                left: 50%;
+                
+                -webkit-transform: rotate(0deg) translateX(-50%);
+                -moz-transform: rotate(0deg) translateX(-50%);
+                transform: rotate(0deg) translateX(-50%);
+            }
+
+            &::after {
+                right: 50%;
+                
+                -webkit-transform: rotate(0deg) translateX(50%);
+                -moz-transform: rotate(0deg) translateX(50%);
+                transform: rotate(0deg) translateX(50%);
+            }
+        }
+    }
+}
+
+.btn-eff-15 {
+    a {
+        color: rgba($black, 0.3) !important;
+
+        &::before {
+            @include transition-transform_op (transform 0.3s, opacity 0.3s);
+            color: $orangered;
+            content: attr(data-hover);
+            position: absolute;
+        }
+
+        &:hover, &:focus {
+            &::before {
+                @include transformScale (0.9);
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.btn-eff-16 {
+    a {
+        color: rgba($black, 0.3);
+
+        &::before {
+            @include transition-transform_op (transform 0.3s, opacity 0.3s);
+            content: attr(data-hover);
+            pointer-events: none;
+            position: absolute;
+            opacity: 0;
+            
+            -webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+            -moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+            transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+        }
+
+        &:hover, &:focus {
+            color: rgba($black, 0.3);
+            &::before {
+                color: $hotpink;
+                -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+                -moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+                transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+                
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn-eff-17 {
+    a {
+        color: $orange !important;
+        padding: 10px 0;
+
+        &::before {
+            @include transition-transform_op (transform 0.3s, opacity 0.3s);
+            color: $greenLight;
+            content: attr(data-hover);
+            pointer-events: none;
+            position: absolute;
+        }
+
+        &::after {
+            @include transition-transform_op (transform 0.3s, opacity 0.3s);
+            @include translateY (5px);
+            background: $greenLight;
+            content: '';
+            pointer-events: none;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+
+        &:hover, &:focus {
+            &::before {
+                @include translateY (-2px);
+                opacity: 0;
+            }
+
+            &::after {
+                @include translateY (0);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn-eff-18 {
+    position: relative;
+    z-index: 1;
+
+    a {
+        @include transition (color 0.3s);
+        color: rgba($black, 0.3);
+        padding: 0 5px;
+
+        &::before, &::after {
+            @include transition-transform_op (transform 0.3s, opacity 0.3s);
+            background: rgba($black, 0.3);
+            content: '';
+            pointer-events: none;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -1px;
+            z-index: -1;
+        }
+
+        &::before {
+            @include translateY (-15px);
+        }
+
+        &::after {
+            @include translateY (15px);
+        }
+
+        &:hover, &:focus {
+            color: $orange / 1.35;
+
+            &::before, &::after {
+                background: rgba($deeppink, 0.3);
+            }
+
+            &::before {
+                @include transformRotate (45deg);
+            }
+
+            &::after {
+                @include transformRotate (-45deg);
+            }
+        }
+    }
+}
+
+.btn-eff-19 {
+    a {
+        @include perspective (800px);
+        color: $white !important;
+        line-height: 2em;
+        width: 200px;
+        
+        span {
+            @include transformOrigin (50% 50% -100px);
+            background: $hotpink / 1.35;
+            display: inline-block;
+            width: 100%;
+            padding: 0 14px;
+            position: relative;
+            
+            -webkit-transition: -webkit-transform 0.4s, background 0.4s;
+            -moz-transition: -moz-transform 0.4s, background 0.4s;
+            transition: transform 0.4s, background 0.4s;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d; //IE, к сожалению, не поддерживает transform-style: preserve-3d. Вообще.
+            transform-style: preserve-3d;
+
+            &::before {
+                @include transition (background 0.4s);
+                @include transformRotateY (90deg);
+                @include transformOrigin (0 50%);
+                background: $orange;
+                content: attr(data-hover);
+                pointer-events: none;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 100%;
+            }
+        }
+
+        &:hover, &:focus {
+            span {
+                @include transformRotateY (-90deg);
+                background: $hotpink / 1.35;
+                
+                &::before {
+                    background: $orange;	
+                }
+            }
+        }
+    }
+}
+
+.btn-eff-20 {
+    background: $f1;
+    
+    a {
+        @include perspective (800px);
+        color: $white !important;
+        line-height: 2em;
+
+        span {
+            @include transition (background 0.6s);
+            @include transformOrigin (0% 50%);
+            background: $hotpink / 1.5;
+            box-shadow: inset 0 3px $deeppink / 1.35;
+            display: inline-block;
+            padding: 3px 15px 0;
+            position: relative;
+            
+            /*-webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d; //IE, к сожалению, не поддерживает transform-style: preserve-3d. Вообще.
+            transform-style: preserve-3d;*/
+
+            &::before {
+                @include transition-transform (transform 0.6s);
+                @include transformRotateX (270deg);
+                @include transformOrigin (0 0);
+                background: $white;
+                box-shadow: inset 0 3px $hotpink / 1.35;
+                color: $mediumvioletred / 1.5;
+                content: attr(data-hover);
+                padding-top: 3px;
+                pointer-events: none;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &:hover, &:focus {
+            span {
+                background: $mediumvioletred / 1.5;
+
+                &::before {
+                    @include transformRotateX (10deg);
+                }
+            }
+        }
+    }
+}
+
+.btn-eff-21 {
+    a {
+        @include transition (color 0.3s);
+        color: rgba($black, 0.3);
+        padding: 10px;
+
+        &::before, &::after {
+            @include transition-transform_op (transform 0.3s, opacity 0.3s);
+            @include translateY (-10px);
+            background: $orangered;
+            content: '';
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            @include translateY (10px);
+            bottom: 0;
+        }
+
+        &:hover, &:focus {
+            color: $orangered;
+
+            &::before, &::after {
+                @include translateY (0);
+                opacity: 1;
+            }
+        }
+    }
+}
+/* === END HOVERS BUTTONS === */

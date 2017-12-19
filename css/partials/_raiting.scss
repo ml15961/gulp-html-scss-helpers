@@ -1,0 +1,17 @@
+/* === BEGIN RAITING === */
+.rating-wrap {
+    cursor: pointer;
+    width: 230px;
+    height: 30px;
+    position: relative;
+    
+    .rating-percent, .rating {
+        background: url(../img/heart.png) 0 0 repeat-x;
+        background-size: auto 100%;
+        position: absolute;
+        width: 230px;
+        height: 30px;
+    }
+    .rating {opacity: 0.35;}
+}
+/* === END RAITING === */
