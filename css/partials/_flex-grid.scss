@@ -57,6 +57,10 @@ $fg-breakpoints: (
     }
 }
 
+%col {
+  background-color: #fcd6fc;
+}
+
 @mixin grid-base( $namespace ) {
     @for $i from 1 through $fg-columns {
         .col-#{$namespace}-#{$i} {
